@@ -9,6 +9,9 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {LoginComponent} from "./login/login.component";
 import {OrdersComponent} from "./orders/orders.component";
 import {SignupComponent} from "./signup/signup.component";
+import {ForgotPasswordComponent} from "./forgot-password/forgot-password.component";
+import {AddressComponent} from "./address/address.component";
+import {ProfileDetailsComponent} from "./profile-details/profile-details.component";
 
 const routes: Routes = [
   { path:"", component:HomeComponent },
@@ -19,7 +22,11 @@ const routes: Routes = [
   { path:"dashboard", component:DashboardComponent },
   { path:"order", component:OrdersComponent },
   { path:"login", component:LoginComponent },
-  { path:"signup", component:SignupComponent }];
+  { path:"signup", component:SignupComponent },
+  { path:"forgot-password", component:ForgotPasswordComponent },
+  { path:"profile-details", component:ProfileDetailsComponent },
+  { path:"address", component:AddressComponent }
+  ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
