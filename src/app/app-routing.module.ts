@@ -12,6 +12,7 @@ import {SignupComponent} from "./signup/signup.component";
 import {ForgotPasswordComponent} from "./forgot-password/forgot-password.component";
 import {AddressComponent} from "./address/address.component";
 import {ProfileDetailsComponent} from "./profile-details/profile-details.component";
+import {EditAddressComponent} from "./edit-address/edit-address.component";
 
 const routes: Routes = [
   { path:"", component:HomeComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path:"signup", component:SignupComponent },
   { path:"forgot-password", component:ForgotPasswordComponent },
   { path:"profile-details", component:ProfileDetailsComponent },
-  { path:"address", component:AddressComponent }
+  { path:"address", component:AddressComponent },
+  { path:"edit-address", component:EditAddressComponent }
   ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
