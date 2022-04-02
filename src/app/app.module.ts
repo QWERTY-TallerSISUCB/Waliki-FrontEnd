@@ -9,6 +9,12 @@ import { HomeComponent } from './home/home.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ProductsingleComponent } from './productsingle/productsingle.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { ShopComponent } from './shop/shop.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
+import { OrdersComponent } from './orders/orders.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +23,13 @@ import { CartComponent } from './cart/cart.component';
     FooterComponent,
     HomeComponent,
     ProductsingleComponent,
-    CartComponent
+    CartComponent,
+    CheckoutComponent,
+    ShopComponent,
+    DashboardComponent,
+    LoginComponent,
+    OrdersComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
