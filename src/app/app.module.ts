@@ -19,6 +19,7 @@ import { ProfileDetailsComponent } from './profile-details/profile-details.compo
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AddressComponent } from './address/address.component';
 import { EditAddressComponent } from './edit-address/edit-address.component';
+import { CatalogueComponent } from './catalogue/catalogue.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EditAddressComponent } from './edit-address/edit-address.component';
     ProfileDetailsComponent,
     ForgotPasswordComponent,
     AddressComponent,
-    EditAddressComponent
+    EditAddressComponent,
+    CatalogueComponent
   ],
   imports: [
     BrowserModule,
