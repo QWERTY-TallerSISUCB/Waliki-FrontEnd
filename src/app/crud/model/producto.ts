@@ -10,3 +10,4 @@ export class ConsultaProducto {
   tipoProducto!: string;
   disponible!: boolean;
 }
+
