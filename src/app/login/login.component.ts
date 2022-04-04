@@ -9,7 +9,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  
+  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar, private router: Router){
+      this.form = this.fb.group({
+        usuario: ['', Validators.required],
+        password: ['', Validators.required],
+      })
+    }
+  //constructor() { }
 
   ngOnInit(): void {
   }
