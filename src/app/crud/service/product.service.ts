@@ -4,13 +4,12 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({providedIn: 'root'})
-export class ProductoService {
+export class ProductService {
   private baseUrl = 'http://localhost:8082/catalogo'; //aca se llama a la API
   constructor(private http: HttpClient) { }
   // Para mostrar el catalogo de productos
-  catalogo() : Observable<any>{
+  public catalogo() : Observable<any>{
     return this.http.get(this.baseUrl);
   }
-
 
 }
