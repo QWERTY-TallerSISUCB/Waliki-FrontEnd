@@ -9,18 +9,18 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  
-  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar, private router: Router){
+
+  /*constructor(private fb: FormBuilder, private _snackBar: MatSnackBar, private router: Router){
       this.form = this.fb.group({
         usuario: ['', Validators.required],
         password: ['', Validators.required],
       })
-    }
-  //constructor() { }
+    }*/
+  constructor() { }
 
   ngOnInit(): void {
   }
-  
+  /*
   ingresar(){
       const usuario = this.form.value.usuario;
       const password = this.form.value.password;
@@ -54,6 +54,6 @@ export class LoginComponent implements OnInit {
 
         this.router.navigate(['home'])
       }, 1500);
-    }
+    }*/
 
 }
