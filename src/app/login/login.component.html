@@ -14,9 +14,7 @@
               <input type="text" class="form-control" name="username" (ngModel)="form.username" placeholder="Enter Username">
               <div
               class="alert alert-danger"
-              role="alert"
-                
-                *ngIf="username.errors && f.submitted">Nombre de usuario es requerido!!
+              role="alert">Nombre de usuario es requerido!!
             </div>
             
             </div>
@@ -27,7 +25,7 @@
               <div
               class="alert alert-danger"
               role="alert"
-              *ngIf="password.errors && f.submitted">Contrasenia es requerido!!</div>
+              >Contrasenia es requerido!!</div>
             </div>
 
             <a href="#" class="btn btn-main mt-3 btn-block">Entrar</a>

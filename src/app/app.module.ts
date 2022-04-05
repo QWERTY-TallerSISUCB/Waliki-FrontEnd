@@ -20,6 +20,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AddressComponent } from './address/address.component';
 import { EditAddressComponent } from './edit-address/edit-address.component';
 import { ComponentNameComponent } from './component-name/component-name.component';
+import { CatalogueComponent } from './catalogue/catalogue.component';
+import { FormsModule } from '@angular/forms';
+import { ProductService } from './crud/service/product.service';
 
 @NgModule({
   declarations: [
@@ -39,14 +42,16 @@ import { ComponentNameComponent } from './component-name/component-name.componen
     ForgotPasswordComponent,
     AddressComponent,
     EditAddressComponent,
-    ComponentNameComponent
+    ComponentNameComponent,
+    CatalogueComponent    
   ],
   imports: [
     BrowserModule,
     SlickCarouselModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
