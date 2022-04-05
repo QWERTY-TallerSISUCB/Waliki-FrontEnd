@@ -1,4 +1,4 @@
-<div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5" >
+<div class="col-lg-3 col-12 col-md-6 col-sm-6 mb-5" *ngFor="let ci of producto">
   <!-- /Creacion de los productos -->
   <div class="product" >
     <div class="product-wrap">
@@ -11,14 +11,14 @@
       <a href="#"><i class="tf-ion-android-cart"></i></a>
       <a href="#"><i class="tf-ion-ios-heart"></i></a>
     </div>
-
-    <div class="product-info" *ngFor="let ci of producto">
-      <h2 class="product-title h5 mb-0">
-        <a href="#" >{{ci.nombreProducto}}</a>
-      </h2>
-      <span class="price">
-                      $329.10
-                  </span>
+    <div >
+      <div class="product-info" >
+        <h2 class="product-title h5 mb-0">
+          <a href="#" >{{ci.nombreProducto}}</a>
+        </h2>
+        <span class="price"> {{ci.precio}} </span>
+      </div>
     </div>
+
   </div>
 </div>
