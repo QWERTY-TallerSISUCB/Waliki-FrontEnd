@@ -19,7 +19,6 @@ import { ProfileDetailsComponent } from './profile-details/profile-details.compo
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AddressComponent } from './address/address.component';
 import { EditAddressComponent } from './edit-address/edit-address.component';
-import { CatalogueComponent } from './catalogue/catalogue.component';
 import { ComponentNameComponent } from './component-name/component-name.component';
 
 @NgModule({
@@ -40,7 +39,6 @@ import { ComponentNameComponent } from './component-name/component-name.componen
     ForgotPasswordComponent,
     AddressComponent,
     EditAddressComponent,
-    CatalogueComponent,
     ComponentNameComponent
   ],
   imports: [
