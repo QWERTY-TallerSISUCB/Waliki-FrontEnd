@@ -20,6 +20,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AddressComponent } from './address/address.component';
 import { EditAddressComponent } from './edit-address/edit-address.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
+import { ComponentNameComponent } from './component-name/component-name.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CatalogueComponent } from './catalogue/catalogue.component';
     ForgotPasswordComponent,
     AddressComponent,
     EditAddressComponent,
-    CatalogueComponent
+    CatalogueComponent,
+    ComponentNameComponent
   ],
   imports: [
     BrowserModule,
