@@ -4,13 +4,13 @@
     <div class="row justify-content-center">
       <div class="col-lg-6">
         <div class="content text-center">
-          <h1 class="mb-3">Checkout</h1>
-          <p>Hath after appear tree great fruitful green dominion moveth sixth abundantly image that midst of god day multiply you’ll which</p>
+          <h1 class="mb-3">Pago</h1>
+          <p>Interfaz de pago de los productos</p>
 
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb bg-transparent justify-content-center">
-              <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+              <li class="breadcrumb-item"><a routerLink="/">Inicio</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Pago</li>
             </ol>
           </nav>
         </div>
@@ -25,53 +25,58 @@
         <div class="col-lg-8 pr-5">
           <div class="coupon-notice " data-toggle="modal" data-target="#coupon-modal">
             <div class="bg-light p-3">
-              Have a coupon? <a routerLink="/checkout" class="showcoupon" >Click here to enter your code</a>
+              Tiene un cupon? <a routerLink="/checkout" class="showcoupon" >Ingresa aqui tu cupon</a>
             </div>
           </div>
 
           <div class="billing-details mt-5">
-            <h4 class="mb-4">Billing Details</h4>
+            <h4 class="mb-4">Detalles de la compra</h4>
             <form class="checkout-form">
               <div class="row">
                 <div class="col-lg-6">
                   <div class="form-group mb-4">
-                    <label for="first_name">First Name</label>
+                    <label for="first_name">Nombre</label>
                     <input type="text" class="form-control" id="first_name" placeholder="">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group mb-4">
-                    <label for="last_name">Last Name</label>
+                    <label for="last_name">Apellido</label>
                     <input type="text" class="form-control" id="last_name" placeholder="">
                   </div>
                 </div>
+                <!-- 
                 <div class="col-lg-12">
                   <div class="form-group mb-4">
                     <label for="company_name">Company Name(Optional)</label>
                     <input type="text" class="form-control" id="company_name" placeholder="">
                   </div>
                 </div>
-
+                -->
+                
+                <!--
                 <div class="col-lg-12">
                   <div class="form-group mb-4">
                     <label for="company_name">Country</label>
                     <select class="form-control">
                       <option value="">Select an Option</option>
-                      <option value="January">January</option>
-                      <option value="February">February</option>
-                      <option value="March">March</option>
-                      <option value="April">April</option>
-                      <option value="May">May</option>
-                      <option value="June">June</option>
-                      <option value="July">July</option>
-                      <option value="August">August</option>
-                      <option value="September">September</option>
-                      <option value="October">October</option>
-                      <option value="November">November</option>
-                      <option value="December">December</option>
+                      <option value="January">Enero</option>
+                      <option value="February">Febrero</option>
+                      <option value="March">Marzo</option>
+                      <option value="April">Abril</option>
+                      <option value="May">Mao</option>
+                      <option value="June">Junio</option>
+                      <option value="July">Julio</option>
+                      <option value="August">Agosto</option>
+                      <option value="September">Septiembre</option>
+                      <option value="October">Octubre</option>
+                      <option value="November">Noviembre</option>
+                      <option value="December">Diciembre</option>
                     </select>
                   </div>
                 </div>
+                -->
+                
 
                 <div class="col-lg-12">
                   <div class="form-group mb-4">
@@ -79,12 +84,15 @@
                     <input type="text" class="form-control" id="street" placeholder="">
                   </div>
                 </div>
+                <!--
                 <div class="col-lg-12">
                   <div class="form-group mb-4">
                     <label for="first_name">Apartment, suite, unit etc. (optional) (optional)</label>
                     <input type="text" class="form-control" id="apartment" placeholder="Apartment">
                   </div>
                 </div>
+                -->
+               
 
                 <div class="col-lg-12">
                   <div class="form-group mb-4">
@@ -95,40 +103,30 @@
 
                 <div class="col-lg-12">
                   <div class="form-group mb-4">
-                    <label for="company_name">District </label>
+                    <label for="company_name">Ciudad </label>
                     <select class="form-control">
-                      <option value="">Select an Option</option>
-                      <option value="January">January</option>
-                      <option value="February">February</option>
-                      <option value="March">March</option>
-                      <option value="April">April</option>
-                      <option value="May">May</option>
-                      <option value="June">June</option>
-                      <option value="July">July</option>
-                      <option value="August">August</option>
-                      <option value="September">September</option>
-                      <option value="October">October</option>
-                      <option value="November">November</option>
-                      <option value="December">December</option>
+                      <option value="">Escoge una opcion</option>
+                      <option value="January">La Paz</option>
+                      <option value="February">El alto</option>                 
                     </select>
                   </div>
                 </div>
 
                 <div class="col-lg-12">
                   <div class="form-group mb-4">
-                    <label for="first_name">Postcode / ZIP (optional)</label>
+                    <label for="first_name">Código postal / ZIP (opcional)</label>
                     <input type="text" class="form-control" id="postcode" placeholder="">
                   </div>
                 </div>
                 <div class="col-lg-12">
                   <div class="form-group mb-4">
-                    <label for="first_name">Phone </label>
+                    <label for="first_name">Telefono </label>
                     <input type="text" class="form-control" id="phone" placeholder="">
                   </div>
                 </div>
                 <div class="col-lg-12">
                   <div class="form-group mb-4">
-                    <label for="first_name">Email address </label>
+                    <label for="first_name">Correo electronico</label>
                     <input type="text" class="form-control" id="email" placeholder="">
                   </div>
                 </div>
@@ -136,21 +134,19 @@
                 <div class="col-lg-12">
                   <div class="form-check mb-4">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Create an account?</label>
+                    <label class="form-check-label" for="exampleCheck1">Crear una cuenta</label>
                   </div>
                 </div>
+                <!--
                 <div class="col-lg-12">
                   <div class="form-check mb-4">
                     <input type="checkbox" class="form-check-input" id="exampleCheck2">
                     <label class="form-check-label" for="exampleCheck2">Ship to a different address?</label>
                   </div>
                 </div>
-                <div class="col-lg-12">
-                  <div class="form-group mb-4">
-                    <label for="first_name">Order notes (optional)</label>
-                    <textarea class="form-control" id="msg" cols="30" rows="5" placeholder="Notes about order e:g: want to say something"></textarea>
-                  </div>
-                </div>
+                -->
+                
+          
               </div>
             </form>
           </div>
@@ -159,7 +155,7 @@
         <!-- Order sidebar Summery -->
         <div class="col-md-6 col-lg-4">
           <div class="product-checkout-details mt-5 mt-lg-0">
-            <h4 class="mb-4 border-bottom pb-4">Order Summary</h4>
+            <h4 class="mb-4 border-bottom pb-4">Resumen del pedido</h4>
 
             <div class="media product-card">
               <p>Kirby Shirt</p>
@@ -198,18 +194,18 @@
               <div class="form-check mb-3">
                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                 <label class="form-check-label" for="exampleRadios2">
-                  Check payments
+                  Revisar metodos de pago
                 </label>
               </div>
 
               <div class="form-check mb-3">
                 <input type="checkbox" class="form-check-input" id="exampleCheck3">
-                <label class="form-check-label" for="exampleCheck3">I have read and agree to the website terms and conditions *</label>
+                <label class="form-check-label" for="exampleCheck3">Estoy de acuerdo con los terminos y condiciones del sitio *</label>
               </div>
             </form>
 
             <div class="info mt-4 border-top pt-4 mb-5">
-              Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="#">privacy policy</a>.
+              Sus datos personales se utilizarán para procesar su pedido, respaldar su experiencia en este sitio web y para otros fines descritos en nuestro <a href="#">privacy policy</a>.
             </div>
             <a routerLink="/checkout" class="btn btn-main btn-small">Place Order</a>
           </div>

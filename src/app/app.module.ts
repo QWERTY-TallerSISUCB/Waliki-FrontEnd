@@ -20,7 +20,6 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { AddressComponent } from './address/address.component';
 import { EditAddressComponent } from './edit-address/edit-address.component';
 import { ComponentNameComponent } from './component-name/component-name.component';
-import { CatalogueComponent } from './catalogue/catalogue.component';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './crud/service/product.service';
 
@@ -42,8 +41,7 @@ import { ProductService } from './crud/service/product.service';
     ForgotPasswordComponent,
     AddressComponent,
     EditAddressComponent,
-    ComponentNameComponent,
-    CatalogueComponent    
+    ComponentNameComponent
   ],
   imports: [
     BrowserModule,
