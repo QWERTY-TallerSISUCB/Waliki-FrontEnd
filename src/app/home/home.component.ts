@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../crud/service/product.service';
-import { Product } from '../crud/model/producto'
+import { Product } from '../crud/model/product'
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({

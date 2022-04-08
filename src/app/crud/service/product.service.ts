@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../model/producto'; // Aca se importa las diferentes clases del package model para luego cuadrarlos con las API
+import { Product } from '../model/product'; // Aca se importa las diferentes clases del package model para luego cuadrarlos con las API
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
