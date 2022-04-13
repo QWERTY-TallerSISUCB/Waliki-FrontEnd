@@ -6,7 +6,7 @@
         <div class="content text-center">
           <h1 class="mb-3">Vista del producto</h1>
           <p>
-            Vista del producto sus detalles
+            Detalles del producto
           </p>
 
           <nav aria-label="breadcrumb">
@@ -63,7 +63,7 @@
 
           <hr>
 
-          <h3 class="product-price">$300.00 <del>$400.00</del></h3>
+          <h3 class="product-price">{{ product.unitPrice | currency:'$' }}</h3>
 
           <p class="product-description my-4 ">
             Es una prenda de vestir compuesta por diferentes elementos que, combinados entre ellos, dan un número infinito de modelos de camisas. Los elementos que mayormente diferencian una camisa de la otra son: el cuello, los puños, los botones, los ojales y los bolsillos.</p>
@@ -71,7 +71,7 @@
           <form class="cart" action="#" method="post">
             <div class="quantity d-flex align-items-center">
               <input type="number" id="#" class="input-text qty text form-control w-25 mr-3" step="1" min="1" max="9" name="quantity" value="1" title="Qty" size="4" >
-              <a href="#" class="btn btn-main btn-small">Agregar al carrito</a>
+              <a (click)="addToCart()" class="btn btn-main btn-small">Agregar al carrito</a>
             </div>
           </form>
 
@@ -148,15 +148,13 @@
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
             <p>
-              Es una prenda de vestir compuesta por diferentes elementos que, combinados entre ellos, 
-              dan un número infinito de modelos de camisas. Los elementos que mayormente diferencian 
-              una camisa de la otra son: el cuello, los puños, los botones, los ojales y los bolsillos.
+              {{ product.features }}
             </p>
 
             <h4>Product Features</h4>
 
             <ul class="">
-              <li>Comodo</li>
+              <li>{{ product.features }}</li>
             </ul>
 
           </div>
