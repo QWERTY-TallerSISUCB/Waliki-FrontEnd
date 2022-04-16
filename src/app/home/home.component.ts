@@ -23,8 +23,9 @@ export class HomeComponent implements OnInit {
   thePageSize: number = 5;
   theTotalElements: number = 0;
 
-  previousKeyword: string = null;
+  previousKeyword!: string;
 
+  
   constructor(private productService: ProductService,
               private cartService: CartService,
               private route: ActivatedRoute) { }
@@ -34,6 +35,10 @@ export class HomeComponent implements OnInit {
       this.listProducts();
     });
   }
+
+//Slider settings
+slideConfig = {"slidesToShow": 1, "slidesToScroll": 1} ;
+
 
   listProducts() {
 
@@ -50,7 +55,7 @@ export class HomeComponent implements OnInit {
 
   handleSearchProducts() {
 
-    const theKeyword: string = this.route.snapshot.paramMap.get('keyword');
+    const theKeyword: string = <string>this.route.snapshot.paramMap.get('keyword');
 
     // if we have a different keyword than previous
     // then set thePageNumber to 1
@@ -67,7 +72,7 @@ export class HomeComponent implements OnInit {
     this.productService.searchProductsPaginate(this.thePageNumber - 1,
                                                this.thePageSize,
                                                theKeyword).subscribe(this.processResult());
-                                               
+
   }
 
   handleListProducts() {
@@ -75,14 +80,14 @@ export class HomeComponent implements OnInit {
     // check if "id" parameter is available
     const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
 
-    if (hasCategoryId) {
+   // if (hasCategoryId) {
       // get the "id" param string. convert string to a number using the "+" symbol
-      this.currentCategoryId = +this.route.snapshot.paramMap.get('id');
-    }
-    else {
+   //   this.currentCategoryId = +this.route.snapshot.paramMap.get('id');
+ //   }
+ //   else {
       // not category id available ... default to category id 1
       this.currentCategoryId = 1;
-    }
+ //   }
 
     //
     // Check if we have a different category than previous
@@ -122,7 +127,7 @@ export class HomeComponent implements OnInit {
   }
 
   addToCart(theProduct: Product) {
-    
+
     console.log(`Adding to cart: ${theProduct.productName}, ${theProduct.unitPrice}`);
 
     // TODO ... do the real work
