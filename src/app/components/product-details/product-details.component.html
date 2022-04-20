@@ -1,16 +1,76 @@
 <div class="detail-section">
-    <div class="container-fluid">
-
-        <img src="{{ product.imageUrl }}" class="detail-img">
-
-        <h3>{{ product.name }}</h3>
-        <div class="price">{{ product.unitPrice | currency:'USD' }}</div>
-        <button (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>
-
-        <hr>
-        <h4>Description</h4>
-        <p>{{ product.description }}</p>
-
-        <a routerLink="/products" class="mt-5">Back to Product List</a>
-    </div>
+    <section class="page-header">
+        <div class="overly"></div>   
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="content text-center">
+                <h1 class="mb-3">Product Single</h1>
+                <p>Hath after appear tree great fruitful green dominion moveth sixth abundantly image that midst of god day multiply you’ll which</p>
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent justify-content-center">
+                  <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Product Single</li>
+                </ol>
+              </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <section class="single-product">
+        <div class="container-fluid">
+            <div class="col-md-7">
+                <div class="single-product-details mt-5 mt-lg-0">
+                    <h2>{{ product.name }}</h2>
+                    <img src="{{ product.imageUrl }}" class="detail-img">
+                    <h3 class="product-price">{{ product.unitPrice | currency:'USD' }}</h3>
+                    <button (click)="addToCart()" class="btn btn-primary btn-sm">Add to cart</button>
+                    <h2>Unidades en Stock</h2>
+                    <h2>{{ product.unitsInStock }}</h2>
+                </div> 
+            </div>   
+            <hr>          
+            <p class="product-description my-4 ">
+                {{ product.description }}/
+              </p>    
+        </div>
+    </section>
+      <section class="products related-products section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6">
+              <div class="title text-center">
+                <h2>Te puede gustar</h2>
+                <p>Productos en la misma categoria</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+             <div class="col-lg-3 col-6" >
+                  <div class="product">
+                <div class="product-wrap">
+                  <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/322.jpg" alt="product-img" /></a>
+                  <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/444.jpg" alt="product-img" /></a>
+                </div>
+                <span class="onsale">Sale</span>
+                <div class="product-hover-overlay">
+                  <a href="#"><i class="tf-ion-android-cart"></i></a>
+                  <a href="#"><i class="tf-ion-ios-heart"></i></a>
+                    </div>
+                <div class="product-info">
+                  <h2 class="product-title h5 mb-0"><a routerLink="/product-single">Kirby Shirt</a></h2>
+                  <span class="price">
+                    $329.10
+                  </span>
+                </div>
+              </div>
+               </div>
+           
+           
+            
+          </div>
+        </div>
+      </section>
 </div>

@@ -18,7 +18,11 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { LoginStatusComponent } from './components/login-status/login-status.component';
-
+import myAppConfig from './config/my-app-config';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { ShopComponent } from './components/shop/shop.component';
 
 import {
   OKTA_CONFIG,
@@ -26,11 +30,8 @@ import {
   OktaCallbackComponent
 } from '@okta/okta-angular';
 
-import myAppConfig from './config/my-app-config';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
-import { ShopComponent } from './components/shop/shop.component';
+
+//import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 const oktaConfig = Object.assign({
   onAuthRequired: (injector) => {
@@ -72,7 +73,7 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ShopComponent
+    ShopComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -81,6 +82,7 @@ const routes: Routes = [
     NgbModule,
     ReactiveFormsModule,
     OktaAuthModule
+    //SlickCarouselModule
   ],
   providers: [ProductService, { provide: OKTA_CONFIG, useValue: oktaConfig }],
   bootstrap: [AppComponent]

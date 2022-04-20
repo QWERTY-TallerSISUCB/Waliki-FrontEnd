@@ -11,7 +11,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-//Slider settings
-slideConfig = {"slidesToShow": 1, "slidesToScroll": 1} ;
+  slideConfig = {"slidesToShow": 1, "slidesToScroll": 1} ;
 
 }
