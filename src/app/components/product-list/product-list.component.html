@@ -5,7 +5,14 @@
       <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-first" src="assets/images/322.jpg" alt="product-img" /></a>
       <a routerLink="/product-single"><img class="img-fluid w-100 mb-3 img-second" src="assets/images/444.jpg" alt="product-img" /></a>
     </div>
-    <span class="onsale">Sale</span>
+  
+
+    <!-- if products empty then display a message-->
+    <div *ngIf="products?.length == 0" >
+      <span class="onsale">Sold</span>
+    </div>
+    <span class="Sold">Sold</span>
+    
     <div class="product-hover-overlay">
       <a href="#"><i class="tf-ion-android-cart"></i></a>
       <a href="#"><i class="tf-ion-ios-heart"></i></a>

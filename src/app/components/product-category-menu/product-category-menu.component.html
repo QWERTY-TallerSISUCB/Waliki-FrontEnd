@@ -1,13 +1,12 @@
 
-
-
-
 <div class="menu-sidebar-content js-scrollbar1">
     <nav class="navbar-sidebar">
         <ul class="list-unstyled navbar-list">
 
             <li *ngFor="let tempProductCategory of productCategories">
 
+
+                
                 <a routerLink="/category/{{ tempProductCategory.id }}" routerLinkActive="active-link">
                     {{ tempProductCategory.categoryName }}
                 </a>
@@ -17,3 +16,49 @@
         </ul>
     </nav>
 </div>
+
+<select  name="orderby" class="orderby form-control" aria-label="Shop order" >
+    <option value="" selected="selected">Default sorting</option>
+    <option value="">Sort by popularity</option>
+    <option value="">Sort by average rating</option>
+    <option value="">Sort by latest</option>
+    <option value="">Sort by price: low to high</option>
+    <option value="">Sort by price: high to low</option>
+</select>
+
+<section class="widget widget-sizes mb-5">
+    <h3 class="widget-title h4 mb-4">Shop by Sizes</h3>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="size1" checked>
+      <label class="custom-control-label" for="size1">L Large</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="size2">
+      <label class="custom-control-label" for="size2">XL Extra Large</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="size3">
+      <label class="custom-control-label" for="size3">M Medium</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="size4">
+      <label class="custom-control-label" for="size4">S Small</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="size5">
+      <label class="custom-control-label" for="size5">XS Extra Small</label>
+    </div>
+  </section>
+
+<!-- popular product -->
+<section class="widget widget-popular mb-5">
+    <h3 class="widget-title mb-4 h4">Popular Products</h3>
+    <a class="popular-products-item media" routerLink="/product-single">
+      <img src="assets/images/p-1.jpg" alt="" class="img-fluid mr-4">
+      <div class="media-body">
+        <h6>Contrast <br>Backpack</h6>
+        <span class="price">$45</span>
+      </div>
+    </a>
+    
+  </section>

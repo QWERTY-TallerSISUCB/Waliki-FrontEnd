@@ -33,7 +33,7 @@
                     <h3>Customer</h3>
 
                     <div class="row">
-                        <div class="col-md-2"> <label>First Name</label></div>
+                        <div class="col-md-2"> <label>Nombre</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="firstName" type="text">
@@ -41,11 +41,11 @@
                                 <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger mt-1">
 
                                     <div *ngIf="firstName.errors.required || firstName.errors.notOnlyWhitespace">
-                                        First Name is required
+                                        El nombre es necesario
                                     </div>
 
                                     <div *ngIf="firstName.errors.minlength">
-                                        First Name must be at least 2 characters long
+                                        El nombre debe tener al menos 2 caracteres
                                     </div>
 
                                 </div>
@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"> <label>Last Name</label></div>
+                        <div class="col-md-2"> <label>Apellido</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="lastName" type="text">
@@ -62,11 +62,11 @@
                                 <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)" class="alert alert-danger mt-1">
 
                                     <div *ngIf="lastName.errors.required || lastName.errors.notOnlyWhitespace">
-                                        Last Name is required
+                                        El apellido es necesario
                                     </div>
 
                                     <div *ngIf="lastName.errors.minlength">
-                                        Last Name must be at least 2 characters long
+                                        El nombre debe tener al menos 2 caracteres
                                     </div>
 
                                 </div>
@@ -84,11 +84,11 @@
                                 <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger mt-1">
 
                                     <div *ngIf="email.errors.required">
-                                        Email is required
+                                        Email es necesario
                                     </div>
 
                                     <div *ngIf="email.errors.pattern">
-                                        Email must be a valid email address format
+                                        Email tiene que tener el formato @email
                                     </div>
 
                                 </div>
@@ -115,7 +115,7 @@
 
                                 <div *ngIf="shippingAddressCountry.invalid && (shippingAddressCountry.dirty || shippingAddressCountry.touched)" class="alert alert-danger mt-1">
                                     <div *ngIf="shippingAddressCountry.errors.required">
-                                        Country is required
+                                        El Pais es necesario
                                     </div>
                                 </div>
 
@@ -124,7 +124,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"> <label>Street</label></div>
+                        <div class="col-md-2"> <label>Calle</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="street" type="text">
@@ -143,7 +143,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"> <label>City</label></div>
+                        <div class="col-md-2"> <label>Ciudad</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <input formControlName="city" type="text">
@@ -162,7 +162,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-2"> <label>State</label></div>
+                        <div class="col-md-2"> <label>Departamento</label></div>
                         <div class="col-md-9">
                             <div class="input-space">
                                 <select formControlName="state">
