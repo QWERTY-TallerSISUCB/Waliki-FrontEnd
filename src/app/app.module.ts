@@ -31,6 +31,7 @@ import {
 } from '@okta/okta-angular';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { AddressComponent } from './components/address/address.component';
 
 
 //import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -78,6 +79,7 @@ const routes: Routes = [
     ShopComponent,
     DashboardComponent,
     OrdersComponent,
+    AddressComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
