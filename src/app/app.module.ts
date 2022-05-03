@@ -59,6 +59,11 @@ const routes: Routes = [
   {path: 'category', component: ProductListComponent},
   {path: 'products', component: HomeComponent},
   {path: 'shop' , component: ShopComponent},
+  {path: 'dashboard' , component: DashboardComponent},
+  {path: 'address' , component: AddressComponent},
+  {path: 'profile-details' , component: ProfileDetailsComponent},
+  {path: 'order' , component: OrdersComponent},
+  {path: 'shop' , component: ShopComponent},
   {path: '', redirectTo: '/products', pathMatch: 'full'},
   {path: '**', redirectTo: '/products', pathMatch: 'full'}
 ];
