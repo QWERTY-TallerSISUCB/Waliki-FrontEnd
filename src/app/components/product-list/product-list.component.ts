@@ -55,8 +55,7 @@ export class ProductListComponent implements OnInit {
     // if we have a different keyword than previous
     // then set thePageNumber to 1
 
-    if (this.previousKeyword != theKeyword) {
-      this.thePageNumber = 1;
+    if (this.previousKeyword != theKeyword) {      this.thePageNumber = 1;
     }
 
     this.previousKeyword = theKeyword;
@@ -67,7 +66,7 @@ export class ProductListComponent implements OnInit {
     this.productService.searchProductsPaginate(this.thePageNumber - 1,
                                                this.thePageSize,
                                                theKeyword).subscribe(this.processResult());
-                                               
+
   }
 
   handleListProducts() {
@@ -122,7 +121,7 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(theProduct: Product) {
-    
+
     console.log(`Adding to cart: ${theProduct.name}, ${theProduct.unitPrice}`);
 
     // TODO ... do the real work
