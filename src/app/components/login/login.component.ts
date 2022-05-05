@@ -13,10 +13,9 @@ export class LoginComponent implements OnInit {
 
   oktaSignin: any;
 
-  constructor(private oktaAuthService: OktaAuthService) { 
+  constructor(private oktaAuthService: OktaAuthService) {
 
     this.oktaSignin = new OktaSignIn({
-      logo: 'assets/images/logo.png',
       features: {
         registration: true
       },

@@ -34,6 +34,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { AddressComponent } from './components/address/address.component';
 import { EditAddressComponent } from './components/edit-address/edit-address.component';
 import { ProfileDetailsComponent } from './components/profile-details/profile-details.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 
 //import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -89,6 +90,7 @@ const routes: Routes = [
     AddressComponent,
     EditAddressComponent,
     ProfileDetailsComponent,
+    OrderHistoryComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
