@@ -10,9 +10,9 @@ import { map } from 'rxjs/operators';
 export class OrderService {
 
 
-  private baseUrl = 'http://localhost:8080/api/products';
+  private baseUrl = 'http://localhost:8443/api/products';
 
-  private categoryUrl = 'http://localhost:8080/api/product-category';
+  private categoryUrl = 'http://localhost:8443/api/product-category';
 
   constructor(private httpClient: HttpClient) {   }
 
