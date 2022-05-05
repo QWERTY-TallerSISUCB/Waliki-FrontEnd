@@ -22,14 +22,8 @@ export class OrdersComponent implements OnInit {
   }
 
   listOrders() {
-      this.handleListOrders();
+      //this.handleListOrders();
   }
 
-  handleListOrders() {
-    // now get the products for the given category id
-    this.orderService.getProductListPaginate(this.thePageNumber - 1,
-                                               this.thePageSize,
-                                               this.currentCategoryId)
-                                               .subscribe(this.processResult());
-  }
+
 }
