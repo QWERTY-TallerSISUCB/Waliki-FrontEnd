@@ -6,8 +6,6 @@ import { OrderHistory } from '../common/order-history';
 @Injectable({
   providedIn: 'root'
 })
-
-
 export class OrderHistoryService {
 
   private orderUrl = 'https://localhost:8443/api/orders';
@@ -18,8 +16,7 @@ export class OrderHistoryService {
 
     // need to build URL based on the customer email
     //const orderHistoryUrl = `${this.orderUrl}/search/findByCustomerEmailOrderByDateCreatedDesc?email=${theEmail}`;
-    const orderHistoryUrl = `${this.orderUrl}/search/findByCustomerEmailOrderByDateCreatedDesc?email=sergio.troche@ucb.edu.bo`;
-    console.log(theEmail);
+    const orderHistoryUrl = `${this.orderUrl}/search/findByCustomerEmailOrderByDateCreatedDesc?email=${theEmail}`;
     return this.httpClient.get<GetResponseOrderHistory>(orderHistoryUrl);
   }
 }

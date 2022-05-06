@@ -10,8 +10,8 @@ import { State } from '../common/state';
 })
 export class Luv2ShopFormService {
 
-  private countriesUrl = 'https://localhost:8443/api/countries';
-  private statesUrl = 'https://localhost:8443/api/states';
+  private countriesUrl = 'https://localhost:8080/api/countries';
+  private statesUrl = 'https://localhost:8080/api/states';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -22,10 +22,10 @@ export class Luv2ShopFormService {
     );
   }
 
-  getStates(theCountryId: string): Observable<State[]> {
+  getStates(theCountryCode: string): Observable<State[]> {
 
     // search url
-    const searchStatesUrl = `${this.statesUrl}/search/findByCountryCode?code=${theCountryId}`;
+    const searchStatesUrl = `${this.statesUrl}/search/findByCountryCode?code=${theCountryCode}`;
 
     return this.httpClient.get<GetResponseStates>(searchStatesUrl).pipe(
       map(response => response._embedded.states)
