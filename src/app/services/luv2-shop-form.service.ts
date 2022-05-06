@@ -11,7 +11,7 @@ import { State } from '../common/state';
 export class Luv2ShopFormService {
 
   private countriesUrl = 'https://localhost:8443/api/countries';
-  private statesUrl = 'http://localhost:8443/api/states';
+  private statesUrl = 'https://localhost:8443/api/states';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -22,10 +22,10 @@ export class Luv2ShopFormService {
     );
   }
 
-  getStates(theCountryCode: string): Observable<State[]> {
+  getStates(theCountryId: string): Observable<State[]> {
 
     // search url
-    const searchStatesUrl = `${this.statesUrl}/search/findByCountryCode?code=${theCountryCode}`;
+    const searchStatesUrl = `${this.statesUrl}/search/findByCountryCode?code=${theCountryId}`;
 
     return this.httpClient.get<GetResponseStates>(searchStatesUrl).pipe(
       map(response => response._embedded.states)

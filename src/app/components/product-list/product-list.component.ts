@@ -31,7 +31,7 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService,
               private cartService: CartService,
               private route: ActivatedRoute,
-              private oktaAuthService: OktaAuthService) { }
+              public oktaAuthService: OktaAuthService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(() => {

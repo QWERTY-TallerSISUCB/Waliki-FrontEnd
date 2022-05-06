@@ -30,7 +30,7 @@
                             </span>
                         </div>
                     </div>
-                    <button *ngIf="isAuthenticated==true" (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Add to cart</button>
+                    <button *ngIf="!isAuthenticated==true" (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Add to cart</button>
 
                 </div>
 
@@ -53,7 +53,7 @@
                                 <ngb-pagination [(page)]="thePageNumber"
                                                 [pageSize]="thePageSize"
                                                 [collectionSize]="theTotalElements"
-                                                [maxSize]="500"
+                                                [maxSize]="1000"
                                                 [boundaryLinks]="true"
                                                 (pageChange)="listProducts()">
 
@@ -69,7 +69,8 @@
                                     <option selected="true">24</option>
                                     <option>32</option>
                                     <option>40</option>
-                                    <option>500</option>
+                                    <option>48</option>
+                                    <option>56</option>
                                 </select>
                             </div>
 
