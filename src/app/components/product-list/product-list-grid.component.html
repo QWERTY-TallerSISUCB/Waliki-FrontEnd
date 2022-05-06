@@ -30,7 +30,7 @@
                             </span>
                         </div>
                     </div>
-                    <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Add to cart</button>
+                    <button *ngIf="isAuthenticated==true" (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Add to cart</button>
 
                 </div>
 

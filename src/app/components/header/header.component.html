@@ -38,8 +38,8 @@
                 <li *ngIf="isAuthenticated"><a routerLink="/order">Historial de ordenes</a></li>
                 <li *ngIf="isAuthenticated"><a routerLink="/address">DIreccion de envio</a></li>
 
-                <li><a routerLink="/login">Acceso</a></li>
-                <li><a routerLink="/signup">Registrarse</a></li>
+                <li *ngIf="!isAuthenticated"><a routerLink="/login">Acceso</a></li>
+                <li *ngIf="!isAuthenticated"><a routerLink="/signup">Registrarse</a></li>
                 <!--<li><a routerLink="/forgot-password">Forgot Password</a></li>-->
               </ul>
             </li><!-- / Account -->
@@ -49,26 +49,6 @@
             </li>
           </ul>
         </div>
-       <!--<li class="nav-item">
-         <a class="nav-link" href="#">Sobre Nosotros</a>
-          </li>
-
-          <li class="nav-item dropdown dropdown-slide">
-           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-delay="350"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Paginas
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown4">
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Blog Single</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">404 Page</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </li>--> <!-- /Pages -->
-          <!-- / Blog -->
-
-      <!-- Navbar-collapse -->
 
       <ul class="top-menu list-inline mb-0 d-none d-lg-block" id="top-menu">
         <li class="list-inline-item">
