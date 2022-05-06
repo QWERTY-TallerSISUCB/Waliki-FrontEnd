@@ -8,7 +8,7 @@ import { OrderHistory } from '../common/order-history';
 })
 export class OrderHistoryService {
 
-  private orderUrl = 'https://localhost:8443/api/orders';
+  private orderUrl = 'http://localhost:8080/api/orders';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,7 +16,6 @@ export class OrderHistoryService {
 
     // need to build URL based on the customer email
     const orderHistoryUrl = `${this.orderUrl}/search/findByCustomerEmailOrderByDateCreatedDesc?email=${theEmail}`;
-   // const orderHistoryUrl = `${this.orderUrl}/search/findByCustomerIdOrderByDateCreatedDesc?id=${id}`;
 
     return this.httpClient.get<GetResponseOrderHistory>(orderHistoryUrl);
   }
