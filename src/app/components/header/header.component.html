@@ -79,11 +79,11 @@
           <a href="#" class="search_toggle" id="search-icon"><i class="tf-ion-android-search"></i></a>
         </li>
 
-        <li class="dropdown cart-nav dropdown-slide list-inline-item">
+        <li *ngIf="isAuthenticated" class="dropdown cart-nav dropdown-slide list-inline-item">
           <a href="#" class="dropdown-toggle cart-icon" data-toggle="dropdown" data-hover="dropdown">
             <i class="tf-ion-android-cart"></i>
           </a>
-          <div class="dropdown-menu cart-dropdown">
+          <div  class="dropdown-menu cart-dropdown">
             <!-- Cart Item >
               <a routerLink="/product-single">
                 <img class="media-object img- mr-3" src="assets/images/322.jpg" alt="image" />

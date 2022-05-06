@@ -12,7 +12,7 @@
                             <a routerLink="/products/{{ tempProduct.id }}"><img class="img-fluid w-100 mb-3 img-first" src="{{ tempProduct.imageUrl }}" alt="product-img" /></a>
                             <a routerLink="/products/{{ tempProduct.id }}"><img class="img-fluid w-100 mb-3 img-second" src="{{ tempProduct.imageUrl }}" alt="product-img" /></a>
                         </div>
-            
+
                          <!-- if products empty then display a message-->
                         <div *ngIf="tempProduct?.active == false" >
                             <span class="onsale">Sold</span>
@@ -22,7 +22,7 @@
                             <a href="#"><i class="tf-ion-android-cart"></i></a>
                             <a href="#"><i class="tf-ion-ios-heart"></i></a>
                           </div>
-            
+
                         <div class="product-info">
                             <h2 class="product-title h5 mb-0"><a routerLink="/products/{{ tempProduct.id }}">{{ tempProduct.name }}</a></h2>
                             <span class="price">
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Add to cart</button>
-                    
+
                 </div>
 
                 <!-- if products empty then display a message-->
@@ -49,7 +49,7 @@
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-md-9" style="padding-left: 30%">
-                            
+
                                 <ngb-pagination [(page)]="thePageNumber"
                                                 [pageSize]="thePageSize"
                                                 [collectionSize]="theTotalElements"
