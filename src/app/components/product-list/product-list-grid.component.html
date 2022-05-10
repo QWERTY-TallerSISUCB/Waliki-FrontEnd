@@ -12,13 +12,17 @@
                             <a routerLink="/products/{{ tempProduct.id }}"><img class="img-fluid w-100 mb-3 img-first" src="{{ tempProduct.imageUrl }}" alt="product-img" /></a>
                             <a routerLink="/products/{{ tempProduct.id }}"><img class="img-fluid w-100 mb-3 img-second" src="{{ tempProduct.imageUrl }}" alt="product-img" /></a>
                         </div>
-            
+
+                         <!-- if products empty then display a message-->
+                        <div *ngIf="tempProduct?.active == false" >
+                            <span class="onsale">Sold</span>
+                        </div>
                         <span class="onsale">Sale</span>
                         <div class="product-hover-overlay">
                             <a href="#"><i class="tf-ion-android-cart"></i></a>
                             <a href="#"><i class="tf-ion-ios-heart"></i></a>
                           </div>
-            
+
                         <div class="product-info">
                             <h2 class="product-title h5 mb-0"><a routerLink="/products/{{ tempProduct.id }}">{{ tempProduct.name }}</a></h2>
                             <span class="price">
@@ -26,8 +30,8 @@
                             </span>
                         </div>
                     </div>
-                    <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Add to cart</button>
-                    
+                    <button *ngIf="!isAuthenticated==true" (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm">Add to cart</button>
+
                 </div>
 
                 <!-- if products empty then display a message-->
@@ -45,11 +49,11 @@
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-md-9" style="padding-left: 30%">
-                            
+
                                 <ngb-pagination [(page)]="thePageNumber"
                                                 [pageSize]="thePageSize"
                                                 [collectionSize]="theTotalElements"
-                                                [maxSize]="10"
+                                                [maxSize]="1000"
                                                 [boundaryLinks]="true"
                                                 (pageChange)="listProducts()">
 
@@ -58,7 +62,7 @@
                             </div>
 
                             <div class="col-md-3 mt-2" style="text-align: right;">
-                                <span class="mr-2">Page Size</span>
+                                <span class="mr-2">Tamanio pagina</span>
 
                                 <select (change)="updatePageSize($event.target.value)">
                                     <option>16</option>
@@ -66,6 +70,7 @@
                                     <option>32</option>
                                     <option>40</option>
                                     <option>48</option>
+                                    <option>56</option>
                                 </select>
                             </div>
 

@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { CartItem } from 'src/app/common/cart-item';
 
+import { OktaAuthService } from '@okta/okta-angular';
+
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -12,16 +14,27 @@ import { CartItem } from 'src/app/common/cart-item';
 })
 export class ProductDetailsComponent implements OnInit {
 
+//okta
+isAuthenticated: boolean = false;
+oktaSignin: any;
+
   product: Product = new Product();
 
   constructor(private productService: ProductService,
               private cartService: CartService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private oktaAuthService: OktaAuthService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
       this.handleProductDetails();
-    })
+    });
+    // Subscribe to authentication state changes
+    this.oktaAuthService.$authenticationState.subscribe(
+      (result) => {
+        this.isAuthenticated = result;
+      }
+    );
   }
 
   handleProductDetails() {
@@ -41,7 +54,7 @@ export class ProductDetailsComponent implements OnInit {
     console.log(`Adding to cart: ${this.product.name}, ${this.product.unitPrice}`);
     const theCartItem = new CartItem(this.product);
     this.cartService.addToCart(theCartItem);
-    
+
   }
 
 }

@@ -29,6 +29,12 @@ import {
   OktaAuthModule,
   OktaCallbackComponent
 } from '@okta/okta-angular';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { OrdersComponent } from './components/orders/orders.component';
+import { AddressComponent } from './components/address/address.component';
+import { EditAddressComponent } from './components/edit-address/edit-address.component';
+import { ProfileDetailsComponent } from './components/profile-details/profile-details.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 
 //import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -54,6 +60,11 @@ const routes: Routes = [
   {path: 'category', component: ProductListComponent},
   {path: 'products', component: HomeComponent},
   {path: 'shop' , component: ShopComponent},
+  {path: 'dashboard' , component: DashboardComponent},
+  {path: 'address' , component: AddressComponent},
+  {path: 'profile-details' , component: ProfileDetailsComponent},
+  {path: 'order' , component: OrdersComponent},
+  {path: 'shop' , component: ShopComponent},
   {path: '', redirectTo: '/products', pathMatch: 'full'},
   {path: '**', redirectTo: '/products', pathMatch: 'full'}
 ];
@@ -74,6 +85,12 @@ const routes: Routes = [
     FooterComponent,
     HomeComponent,
     ShopComponent,
+    DashboardComponent,
+    OrdersComponent,
+    AddressComponent,
+    EditAddressComponent,
+    ProfileDetailsComponent,
+    OrderHistoryComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

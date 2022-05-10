@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/common/product';
 import { ActivatedRoute } from '@angular/router';
-import { timeoutWith } from 'rxjs/operators';
 import { CartItem } from 'src/app/common/cart-item';
 import { CartService } from 'src/app/services/cart.service';
+import { OktaAuthService } from '@okta/okta-angular';
 
 @Component({
   selector: 'app-product-list',
@@ -12,6 +12,9 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  //okta
+  isAuthenticated: boolean = false;
+  oktaSignin: any;
 
   products: Product[] = [];
   currentCategoryId: number = 1;
@@ -27,13 +30,25 @@ export class ProductListComponent implements OnInit {
 
   constructor(private productService: ProductService,
               private cartService: CartService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              public oktaAuthService: OktaAuthService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(() => {
       this.listProducts();
     });
+    // Subscribe to authentication state changes
+    this.oktaAuthService.$authenticationState.subscribe(
+      (result) => {
+        this.isAuthenticated = result;
+        console.log("comprobar si esta logeado?"+this.isAuthenticated)
+      }
+    );
+    console.log("estalogeado?"+this.isAuthenticated)
   }
+
+
+
 
   listProducts() {
 
@@ -55,8 +70,7 @@ export class ProductListComponent implements OnInit {
     // if we have a different keyword than previous
     // then set thePageNumber to 1
 
-    if (this.previousKeyword != theKeyword) {
-      this.thePageNumber = 1;
+    if (this.previousKeyword != theKeyword) {      this.thePageNumber = 1;
     }
 
     this.previousKeyword = theKeyword;
@@ -67,7 +81,7 @@ export class ProductListComponent implements OnInit {
     this.productService.searchProductsPaginate(this.thePageNumber - 1,
                                                this.thePageSize,
                                                theKeyword).subscribe(this.processResult());
-                                               
+
   }
 
   handleListProducts() {
@@ -122,7 +136,7 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(theProduct: Product) {
-    
+
     console.log(`Adding to cart: ${theProduct.name}, ${theProduct.unitPrice}`);
 
     // TODO ... do the real work

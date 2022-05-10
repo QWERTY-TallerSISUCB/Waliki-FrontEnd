@@ -1,32 +1,31 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white w-100 navigation" id="navbar">
     <div class="container">
       <a class="navbar-brand font-weight-bold" routerLink="/">E-Shop</a>
-  
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
               aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-  
+
       <div class="collapse navbar-collapse " id="main-navbar">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item active">
             <a class="nav-link" routerLink="/">Inicio </a>
           </li>
-  
+
           <li class="nav-item dropdown dropdown-slide">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-delay="350"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Tienda
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-              <li><a href="shop">Tienda</a></li>
+              <li><a href="/shop">Tienda</a></li>
               <li><a href="#">Detalles de productos</a></li>
-             <!-- <li><a routerLink="/checkout">Checkout</a></li>
-              <li><a routerLink="/cart">Cart</a></li>
-              <li><a href="#">Confirmation</a></li>-->
+              <li *ngIf="isAuthenticated"><a routerLink="/checkout">Checkout</a></li>
+              <li *ngIf="isAuthenticated"><a routerLink="/cart-details">Cart</a></li>
             </ul>
           </li><!-- / Blog -->
-  
+
             <!-- Account -->
             <li class="nav-item dropdown dropdown-slide">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-delay="350"
@@ -34,53 +33,37 @@
                 Cuenta
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
-               <!--<li><a routerLink="/dashboard">Dahsboard</a></li>
-                <li><a routerLink="/order">Orders</a></li>
-                <li><a href="#">Downloads</a></li>
-                <li><a routerLink="/address">Address</a></li>
-                <li><a routerLink="/profile-details">Profile Details</a></li>-->
-                <li><a routerLink="/login">Acceso</a></li>
-                <li><a routerLink="/signup">Registrate</a></li>
+
+                <li *ngIf="isAuthenticated"><a  routerLink="/dashboard">Dashboard</a></li>
+                <li *ngIf="isAuthenticated"><a routerLink="/order">Historial de ordenes</a></li>
+                <li *ngIf="isAuthenticated"><a routerLink="/address">DIreccion de envio</a></li>
+
+                <li *ngIf="!isAuthenticated"><a routerLink="/login">Acceso</a></li>
+                <li *ngIf="!isAuthenticated"><a routerLink="/signup">Registrarse</a></li>
                 <!--<li><a routerLink="/forgot-password">Forgot Password</a></li>-->
               </ul>
             </li><!-- / Account -->
-  
+
             <li class="nav-item">
               <a class="nav-link" href="#">Contactanos</a>
             </li>
           </ul>
         </div>
-       <!--<li class="nav-item">
-         <a class="nav-link" href="#">Sobre Nosotros</a>
-          </li>
-          
-          <li class="nav-item dropdown dropdown-slide">
-           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-delay="350"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Paginas
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown4">
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Blog Single</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">404 Page</a></li>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </li>--> <!-- /Pages -->
-          <!-- / Blog -->
-    
-      <!-- Navbar-collapse -->
-  
+
       <ul class="top-menu list-inline mb-0 d-none d-lg-block" id="top-menu">
+        <li class="list-inline-item">
+          <app-login-status></app-login-status>
+        </li>
+
         <li class="list-inline-item">
           <a href="#" class="search_toggle" id="search-icon"><i class="tf-ion-android-search"></i></a>
         </li>
-  
-        <li class="dropdown cart-nav dropdown-slide list-inline-item">
+
+        <li *ngIf="isAuthenticated" class="dropdown cart-nav dropdown-slide list-inline-item">
           <a href="#" class="dropdown-toggle cart-icon" data-toggle="dropdown" data-hover="dropdown">
             <i class="tf-ion-android-cart"></i>
           </a>
-          <div class="dropdown-menu cart-dropdown">
+          <div  class="dropdown-menu cart-dropdown">
             <!-- Cart Item >
               <a routerLink="/product-single">
                 <img class="media-object img- mr-3" src="assets/images/322.jpg" alt="image" />
@@ -99,7 +82,7 @@
             <div class="cart-summary">
               <span class="h6">Total</span>
               <app-cart-status></app-cart-status>
-  
+
               <div class="text-center cart-buttons mt-3">
                 <a routerLink="/cart-details" class="btn btn-small btn-transparent btn-block">Ver carrito</a>
                 <a routerLink="/checkout" class="btn btn-small btn-main btn-block">Checkout</a>
@@ -111,4 +94,3 @@
       </ul>
     </div>
   </nav>
-  
