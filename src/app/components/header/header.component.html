@@ -44,6 +44,22 @@
               </ul>
             </li><!-- / Account -->
 
+
+            <!-- Account -->
+            <li *ngIf="isAuthenticated" class="nav-item dropdown dropdown-slide">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-delay="350"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Admin
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
+
+                <li *ngIf="isAuthenticated"><a  routerLink="/admindashboard">Admin Dashboard</a></li>
+                <li *ngIf="isAuthenticated"><a routerLink="/order">Historial de ordenes</a></li>
+                <li *ngIf="isAuthenticated"><a routerLink="/address">DIreccion de envio</a></li>
+                <!--<li><a routerLink="/forgot-password">Forgot Password</a></li>-->
+              </ul>
+            </li><!-- / Account -->
+
             <li class="nav-item">
               <a class="nav-link" href="#">Contactanos</a>
             </li>

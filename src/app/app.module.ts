@@ -35,7 +35,10 @@ import { AddressComponent } from './components/address/address.component';
 import { EditAddressComponent } from './components/edit-address/edit-address.component';
 import { ProfileDetailsComponent } from './components/profile-details/profile-details.component';
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 
+import {MenuItem} from 'primeng/api';                  //api
 
 //import { SlickCarouselModule } from 'ngx-slick-carousel';
 
@@ -65,6 +68,7 @@ const routes: Routes = [
   {path: 'profile-details' , component: ProfileDetailsComponent},
   {path: 'order' , component: OrdersComponent},
   {path: 'shop' , component: ShopComponent},
+  {path: 'admindashboard' , component: AdminDashboardComponent},
   {path: '', redirectTo: '/products', pathMatch: 'full'},
   {path: '**', redirectTo: '/products', pathMatch: 'full'}
 ];
@@ -91,6 +95,7 @@ const routes: Routes = [
     EditAddressComponent,
     ProfileDetailsComponent,
     OrderHistoryComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -98,7 +103,8 @@ const routes: Routes = [
     HttpClientModule,
     NgbModule,
     ReactiveFormsModule,
-    OktaAuthModule
+    OktaAuthModule,
+    AccordionModule
     //SlickCarouselModule
   ],
   providers: [ProductService, { provide: OKTA_CONFIG, useValue: oktaConfig }],
