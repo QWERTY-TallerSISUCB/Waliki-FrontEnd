@@ -37,8 +37,9 @@ import { ProfileDetailsComponent } from './components/profile-details/profile-de
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
-
-import {MenuItem} from 'primeng/api';                  //api
+import { ChartModule } from 'primeng/chart';
+import {MenuItem} from 'primeng/api';
+import { PieComponent } from './components/admin-dashboard/pie/pie.component';
 
 //import { SlickCarouselModule } from 'ngx-slick-carousel';
 
@@ -96,6 +97,8 @@ const routes: Routes = [
     ProfileDetailsComponent,
     OrderHistoryComponent,
     AdminDashboardComponent,
+    PieComponent,
+
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -104,6 +107,7 @@ const routes: Routes = [
     NgbModule,
     ReactiveFormsModule,
     OktaAuthModule,
+    ChartModule,
     AccordionModule
     //SlickCarouselModule
   ],
