@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { AppConfig } from '../common/appconfig';
+import { Appconfig } from '../common/appconfig';
 
 @Injectable()
 export class AppConfigService {
 
-    config: AppConfig = {
+    config: Appconfig = {
         theme: 'lara-light-blue',
         dark: false,
         inputStyle: 'outlined',
         ripple: true
     };
 
-    private configUpdate = new Subject<AppConfig>();
+    private configUpdate = new Subject<Appconfig>();
 
     configUpdate$ = this.configUpdate.asObservable();
 
-    updateConfig(config: AppConfig) {
+    updateConfig(config: Appconfig) {
         this.config = config;
         this.configUpdate.next(config);
     }

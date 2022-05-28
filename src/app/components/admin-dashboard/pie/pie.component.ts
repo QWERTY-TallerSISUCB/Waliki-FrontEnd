@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {AppConfigService} from '../../../services/appconfig.service';
-import {AppConfig} from '../../../common/appconfig';
+import {Appconfig} from '../../../common/appconfig';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -15,7 +15,7 @@ export class PieComponent implements OnInit, OnDestroy  {
 
   subscription: Subscription;
 
-  config: AppConfig;
+  config: Appconfig;
 
   constructor(private configService: AppConfigService) { }
 
