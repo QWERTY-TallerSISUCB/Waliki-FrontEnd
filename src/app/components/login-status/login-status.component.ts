@@ -40,7 +40,7 @@ export class LoginStatusComponent implements OnInit {
           //retrieve the user's eam
           const theEmail = res.email;
 
-          this.storage.setIten('userEmail',JSON.stringify(theEmail));
+          this.storage.setItem('userEmail',JSON.stringify(theEmail));
 
         }
       );
