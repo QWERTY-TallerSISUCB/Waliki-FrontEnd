@@ -8,7 +8,7 @@ import { Dashboard } from '../common/dashboard';
 })
 export class DashboardService {
 
-  private baseUrl = 'https://localhost:8443/api/dashboard';
+  private baseUrl = 'https://localhost:9030/api/dashboard';
 
 
   constructor(private httpClient: HttpClient) { }
