@@ -77,7 +77,7 @@ basicData: any;
                 };
 
                 this.multiAxisData = {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    labels: ['hola', 'February', 'March', 'April', 'May', 'June', 'July'],
                     datasets: [{
                         label: 'Dataset 1',
                         backgroundColor: [

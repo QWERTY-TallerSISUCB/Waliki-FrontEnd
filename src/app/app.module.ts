@@ -23,7 +23,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ShopComponent } from './components/shop/shop.component';
-
+//import {PaginatorModule} from 'primeng/paginator';
 import {
   OKTA_CONFIG,
   OktaAuthModule,
@@ -106,7 +106,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     OktaAuthModule,
     ChartModule,
-    AccordionModule
+    AccordionModule,
+    //PaginatorModule
     //SlickCarouselModule
   ],
   providers: [ProductService, { provide: OKTA_CONFIG, useValue: oktaConfig }],

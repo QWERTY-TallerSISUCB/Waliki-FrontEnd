@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { CartItem } from 'src/app/common/cart-item';
 import { CartService } from 'src/app/services/cart.service';
 import { OktaAuthService } from '@okta/okta-angular';
+import {SelectItem} from 'primeng/api';
+import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'app-product-list',
@@ -15,6 +17,10 @@ export class ProductListComponent implements OnInit {
   //okta
   isAuthenticated: boolean = false;
   oktaSignin: any;
+
+  sortOptions: SelectItem[];
+  sortOrder: number;
+  sortField: string;
 
   products: Product[] = [];
   currentCategoryId: number = 1;
@@ -31,7 +37,8 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService,
               private cartService: CartService,
               private route: ActivatedRoute,
-              public oktaAuthService: OktaAuthService) { }
+              public oktaAuthService: OktaAuthService,
+              private primengConfig: PrimeNGConfig) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(() => {
@@ -45,9 +52,24 @@ export class ProductListComponent implements OnInit {
       }
     );
     console.log("estalogeado?"+this.isAuthenticated)
+    this.sortOptions = [
+      {label: 'Price High to Low', value: '!price'},
+      {label: 'Price Low to High', value: 'price'}
+  ];
   }
 
+  onSortChange(event) {
+    let value = event.value;
 
+    if (value.indexOf('!') === 0) {
+        this.sortOrder = -1;
+        this.sortField = value.substring(1, value.length);
+    }
+    else {
+        this.sortOrder = 1;
+        this.sortField = value;
+    }
+}
 
 
   listProducts() {

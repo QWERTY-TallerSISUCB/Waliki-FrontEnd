@@ -1,23 +1,45 @@
-<p>admin-</p>
+
+  <table style="width: 80%;" >
+    <tbody>
+    <tr>
+    <td>
+      <div class="card">
+      <h5>Numero de prendas por categoria</h5>
+      <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
+      </div>
+    </td>
+    <td>
+      <div class="card">
+        <h5>Prendas mas vendidas</h5>
+        <p-chart type="bar" [data]="basicData" [options]="horizontalOptions"></p-chart>
+      </div>
+    </td>
+    </tr>
+    <tr>
+    <td>
+      <div class="card">
+        <h5>Numero de ordenes por mes</h5>
+        <p-chart type="bar" [data]="stackedData" [options]="stackedOptions"></p-chart>
+      </div>
+
+    </td>
+    <td>
+      <div class="card">
+        <h5>Prendas en Stock / Sin stock</h5>
+        <p-chart type="pie" [data]="data" [options]="chartOptions"  [style]="{'width': '80%'}"></p-chart>
+      </div>
+
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
 
-<div class="card">
-  <h5>Vertical</h5>
-  <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
-</div>
 
-<div class="card">
-  <h5>Horizontal</h5>
-  <p-chart type="bar" [data]="basicData" [options]="horizontalOptions"></p-chart>
-</div>
 
-<div class="card">
-  <h5>Multi Axis</h5>
-  <p-chart type="bar" [data]="multiAxisData" [options]="multiAxisOptions"></p-chart>
-</div>
 
-<div class="card">
-  <h5>Stacked</h5>
-  <p-chart type="bar" [data]="stackedData" [options]="stackedOptions"></p-chart>
-</div>
-<p-chart type="pie" [data]="data" [options]="chartOptions"  [style]="{'width': '40%'}"></p-chart>
+
+
+
+
+
