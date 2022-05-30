@@ -1,26 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Dashboard } from '../common/dashboard';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
 
-  private dashUrl1 = 'https://localhost:8443/api/dashboard/1';
-  private dashUrl2 = 'https://localhost:8443/api/dashboard/2';
-  private dashUrl3 = 'https://localhost:8443/api/dashboard/3';
-  private dashUrl4 = 'https://localhost:8443/api/dashboard/4';
+  private baseUrl = 'https://localhost:8443/api/dashboard';
 
 
   constructor(private httpClient: HttpClient) { }
 
 
-  getProduct(theProductId: number): Observable<Product> {
+  getProduct(theProductId: number): Observable<Dashboard> {
 
     // need to build URL based on product id
     const productUrl = `${this.baseUrl}/${theProductId}`;
 
-    return this.httpClient.get<Product>(productUrl);
+    return this.httpClient.get<Dashboard>(productUrl);
   }
-  
+
 }
