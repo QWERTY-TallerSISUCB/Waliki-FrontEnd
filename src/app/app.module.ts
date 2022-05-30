@@ -39,7 +39,6 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import { ChartModule } from 'primeng/chart';
 import {MenuItem} from 'primeng/api';
-import { PieComponent } from './components/admin-dashboard/pie/pie.component';
 
 //import { SlickCarouselModule } from 'ngx-slick-carousel';
 
@@ -97,7 +96,6 @@ const routes: Routes = [
     ProfileDetailsComponent,
     OrderHistoryComponent,
     AdminDashboardComponent,
-    PieComponent,
 
   ],
   imports: [
