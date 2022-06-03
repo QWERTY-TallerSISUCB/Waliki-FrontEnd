@@ -57,20 +57,18 @@ export class AdminDashboardComponent implements OnInit {
     }
 
 
-    handleProductDetails() {
-
-      // get the "id" param string. convert string to a number using the "+" symbol
-      const theProductId: number = +this.route.snapshot.paramMap.get('id');
-
+    handleFirstDashboard() {
       this.dashboardService.getDashboardCategory().subscribe(
         data => {
           this.dashboardclass = data;
+          console.log("data de los dashboard")
           console.log(this.dashboardclass.data);
         }
       )
     }
 
     chargeData() {
+      this.handleFirstDashboard();
 
       this.basicData = {
         labels: ['Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4', 'Categoria 5', 'Categoria 6'],
