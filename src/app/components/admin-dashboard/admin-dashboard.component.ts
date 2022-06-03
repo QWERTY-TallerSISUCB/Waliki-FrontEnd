@@ -36,6 +36,7 @@ class AppConfigService {
 export class AdminDashboardComponent implements OnInit {
       dashboardclass: Dashboard = new Dashboard();
       data: any;
+      multidata: any;
       basicData: any;
       basicOptions: any;
       multiAxisData: any;
@@ -46,6 +47,15 @@ export class AdminDashboardComponent implements OnInit {
       horizontalOptions: any;
       subscription: Subscription;
       config: AppConfig;
+      total1: any;
+      contador: any;
+      A:[];
+      B:[];
+      C:[];
+      D:[];
+      E:[];
+      F:[];
+
   constructor(private configService: AppConfigService,private route: ActivatedRoute, private dashboardService: DashboardService,) { }
 
   ngOnInit(): void {
@@ -68,14 +78,163 @@ export class AdminDashboardComponent implements OnInit {
     chargeData() {
       this.handleFirstDashboard();
 
+      /*var total1:any;
+      var total2:any;
+      var total3:any;
+      var total4:any;
+      var total5:any;
+      var total6:any;
+      var total7:any;
+      A: [1,2,3,4,5,6];
+      B: [1,2,3,4,5,6];
+      C: [1,2,3,4,5,6];
+      D: [1,2,3,4,5,6];
+      E: [1,2,3,4,5,6];
+      F: [1,2,3,4,5,6];
+
+      this.contador=this.A.length;
+      /*while(this.A.length>0){
+        this.contador=this.contador-1;
+      }*/
+      //this.total1 = this.A[1]+this.B[1]+this.C[1]+this.D[1]+this.E[1];
+
+      this.multidata = {
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
+        datasets: [{
+            type: 'line',
+            label: 'Ventas totales',
+            borderColor: '#42A5F5',
+            borderWidth: 2,
+            fill: false,
+            data: [
+              139,
+              311,
+              280,
+              270
+            ]
+        },{
+          type: 'bar',
+          label: 'Categoria 1',
+          backgroundColor: '#00b3ff',
+          data: [
+            23,
+            60,
+            24,
+            50,
+          ],
+          borderColor: 'white',
+          borderWidth: 2
+      },{
+        type: 'bar',
+        label: 'Categoria 2',
+        backgroundColor: '#ee00ff',
+        data: [
+            21,
+            54,
+            24,
+            44,
+        ],
+        borderColor: 'white',
+        borderWidth: 2
+    },{
+      type: 'bar',
+      label: 'Categoria 3',
+      backgroundColor: '#a2ff00',
+      data: [
+          24,
+          47,
+          50,
+          10,
+      ],
+      borderColor: 'white',
+      borderWidth: 2
+  },{
+          type: 'bar',
+          label: 'Categoria 4',
+          backgroundColor: '#66BB6A',
+          data: [
+              25,
+              66,
+              35,
+              39,
+          ],
+          borderColor: 'white',
+          borderWidth: 2
+      }, {
+            type: 'bar',
+            label: 'Categoria 5',
+            backgroundColor: '#ff0000',
+            data: [
+                22,
+                84,
+                44,
+                26,
+            ],
+            borderColor: 'white',
+            borderWidth: 2
+        }, {
+            type: 'bar',
+            label: 'Categoria 6',
+            backgroundColor: '#FFA726',
+            data: [
+                23,
+                52,
+                46,
+                45,
+            ]
+        }]
+    };
+
+    this.chartOptions =  {
+        plugins: {
+            legend: {
+                labels: {
+                    color: '#495057'
+                }
+            }
+        },
+        scales: {
+            x: {
+                ticks: {
+                    color: '#495057'
+                },
+                grid: {
+                    color: '#ebedef'
+                }
+            },
+            y: {
+                ticks: {
+                    color: '#495057'
+                },
+                grid: {
+                    color: '#ebedef'
+                }
+            }
+        }
+    };
+
+    this.config = this.configService.config;
+    this.updateChartOptions();
+    this.subscription = this.configService.configUpdate$.subscribe(config => {
+        this.config = config;
+        this.updateChartOptions();
+    });
+
       this.basicData = {
-        labels: ['Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4', 'Categoria 5', 'Categoria 6'],
+        labels: ['Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4', 'Categoria 5', 'Categoria 6','Categoria 7','Categoria 8','Categoria 9','Categoria 10'],
         datasets: [
             {
-                label: 'Numero de prendas por categoria',
-                backgroundColor: '#42A5F5',
-                data: [this.dashboardclass.data]
+                label: 'Numero de prendas en la categoria 1',
+                backgroundColor: ['#EC407A',
+                '#AB47BC',
+                '#42A5F5',
+                '#7E57C2',
+                '#66BB6A',
+                '#FFCA28',
+                '#26A69A','#ff0000','#ff00f7','#000dff'],
+                data: [34,21,23,24,18,22,31,24,23,22]
             },
+
         ]
     };
 
@@ -183,45 +342,16 @@ export class AdminDashboardComponent implements OnInit {
     };
 
     this.stackedData = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril'],
         datasets: [{
             type: 'bar',
-            label: 'Dataset 1',
-            backgroundColor: '#42A5F5',
-            data: [
-                50,
-                25,
-                12,
-                48,
-                90,
-                76,
-                42
-            ]
-        }, {
-            type: 'bar',
-            label: 'Dataset 2',
-            backgroundColor: '#66BB6A',
-            data: [
-                21,
-                84,
-                24,
-                75,
-                37,
-                65,
-                34
-            ]
-        }, {
-            type: 'bar',
-            label: 'Dataset 3',
+            label: 'Monto en Bs de las ventas totales por mes',
             backgroundColor: '#FFA726',
             data: [
-                41,
-                52,
-                24,
-                74,
-                23,
-                21,
-                32
+              329434.11,
+              759720.00,
+              727670.00,
+              712269.00,
             ]
         }]
     };
@@ -244,10 +374,10 @@ export class AdminDashboardComponent implements OnInit {
 
 //pie chart
 this.data = {
-labels: ['A','B','C'],
+labels: ['Sin Stock','Con Stock'],
 datasets: [
     {
-        data: [300, 50, 100],
+        data: [31, 900],
         backgroundColor: [
             "#42A5F5",
             "#66BB6A",
