@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription,Subject} from 'rxjs';
 import { Injectable } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 
 class AppConfigService {
 
@@ -40,33 +41,26 @@ data: any;
 basicData: any;
 
       basicOptions: any;
-
       multiAxisData: any;
-
       chartOptions: any;
-
       multiAxisOptions: any;
-
       stackedData: any;
-
       stackedOptions: any;
-
       horizontalOptions: any;
-
       subscription: Subscription;
-
       config: AppConfig;
 
-  constructor(private configService: AppConfigService) { }
+  constructor(private configService: AppConfigService, private productService: ProductService,) { }
 
   ngOnInit(): void {
+
    this.basicData = {
-                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    labels: ['Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4', 'Categoria 5', 'Categoria 6'],
                     datasets: [
                         {
-                            label: 'My First dataset',
+                            label: 'Numero de prendas',
                             backgroundColor: '#42A5F5',
-                            data: [65, 59, 80, 81, 56, 55, 40]
+                            data: [this.productService.getProductCategories]
                         },
                         {
                             label: 'My Second dataset',
