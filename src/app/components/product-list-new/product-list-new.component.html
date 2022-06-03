@@ -1,1 +1,9 @@
-<p>product-list-new works!</p>
+<div  class="media mb-3" *ngFor="let tempProduct of products" >
+  <a  class="featured-entry-thumb" routerLink="/product-single">
+    <img src="{{ tempProduct.imageUrl }}" alt="Product thumb" width="64" class="img-fluid mr-3">
+  </a>
+  <div class="media-body">
+    <h6 class="featured-entry-title mb-0"><a href="#">{{ tempProduct.name}}</a></h6>
+    <p class="featured-entry-meta">{{ tempProduct.unitPrice | currency:'USD'}}</p>
+  </div>
+  </div>
