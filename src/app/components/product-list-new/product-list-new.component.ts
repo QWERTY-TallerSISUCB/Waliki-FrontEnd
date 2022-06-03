@@ -11,8 +11,7 @@ import { PrimeNGConfig } from 'primeng/api';
 @Component({
   selector: 'app-product-list-new',
   templateUrl: './product-list-new.component.html',
-  styleUrls: ['./product-list-new.component.css']
-})
+  styleUrls: ['./product-list-new.component.css']})
 export class ProductListNewComponent implements OnInit {
   //okta
   isAuthenticated: boolean = false;
