@@ -10,9 +10,11 @@ import { ProductCategory } from '../common/product-category';
 })
 export class ProductService {
 
-  private baseUrl = 'https://localhost:8443/ms-product/api/products';
+  private baseUrl = 'https://localhost:8443/api/ms-product/api/products';
 
-  private categoryUrl = 'https://localhost:8443/ms-product/api/product-category';
+  //private baseUrl = 'https://localhost:9010/api/products';
+
+  private categoryUrl = 'https://localhost:8443/api/ms-product/api/product-category';
 
   constructor(private httpClient: HttpClient) { }
 

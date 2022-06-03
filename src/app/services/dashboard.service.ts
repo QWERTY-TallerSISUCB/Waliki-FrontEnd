@@ -8,7 +8,9 @@ import { map } from 'rxjs/operators';
 })
 export class DashboardService {
 
-  private baseUrl = 'https://localhost:8443/ms-dashboard/api/dashboard';
+  //private baseUrl = 'https://localhost:8443/ms-dashboard/api/dashboard';
+
+  private baseUrl = 'https://localhost:8083/api/dashboard';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -43,9 +45,7 @@ export class DashboardService {
     return this.httpClient.get<Dashboard>(dashboardUrl);
   }
 
-
 }
-
 
 interface GetResponseDashboards {
   _embedded: {
