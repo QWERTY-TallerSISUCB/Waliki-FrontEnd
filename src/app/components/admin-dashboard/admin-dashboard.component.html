@@ -1,40 +1,21 @@
 
-  <table style="width: 60%;" >
-    <tbody>
-    <tr>
-    <td>
       <div class="card">
       <h5>Numero de prendas por categoria</h5>
       <p-chart type="bar" [data]="basicData" [options]="basicOptions"></p-chart>
       </div>
-    </td>
-    <td>
       <div class="card">
         <h5>Prendas mas vendidas</h5>
         <p-chart type="bar" [data]="basicData" [options]="horizontalOptions"></p-chart>
       </div>
-    </td>
-    </tr>
-    <tr>
-    <td>
       <div class="card">
         <h5>Numero de ordenes por mes</h5>
         <p-chart type="bar" [data]="stackedData" [options]="stackedOptions"></p-chart>
       </div>
 
-    </td>
-    <td>
       <div class="card">
         <h5>Prendas en Stock / Sin stock</h5>
         <p-chart type="pie" [data]="data" [options]="chartOptions"  [style]="{'width': '80%'}"></p-chart>
       </div>
-
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-
 
 
 

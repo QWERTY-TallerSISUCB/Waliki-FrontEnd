@@ -6,7 +6,6 @@ import { DashboardService } from 'src/app/services/dashboard.service';
 import { ActivatedRoute } from '@angular/router';
 
 class AppConfigService {
-
     config: AppConfig = {
         theme: 'lara-light-blue',
         dark: false,
@@ -22,7 +21,6 @@ class AppConfigService {
         this.config = config;
         this.configUpdate.next(config);
     }
-
     getConfig() {
         return this.config;
     }
@@ -76,7 +74,6 @@ export class AdminDashboardComponent implements OnInit {
             {
                 label: 'Numero de prendas por categoria',
                 backgroundColor: '#42A5F5',
-
                 data: [this.dashboardclass.data]
             },
         ]
