@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription,Subject} from 'rxjs';
 import { Injectable } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
+import { DashboardService } from 'src/app/services/dashboard.service';
 
 class AppConfigService {
 
@@ -50,17 +50,17 @@ basicData: any;
       subscription: Subscription;
       config: AppConfig;
 
-  constructor(private configService: AppConfigService, private productService: ProductService,) { }
+  constructor(private configService: AppConfigService, private dashboardService: DashboardService,) { }
 
   ngOnInit(): void {
 
-   this.basicData = {
+                 this.basicData = {
                     labels: ['Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4', 'Categoria 5', 'Categoria 6'],
                     datasets: [
                         {
                             label: 'Numero de prendas',
                             backgroundColor: '#42A5F5',
-                            data: [this.productService.getProductCategories]
+                            data: [this.dashboardService.getDashboardCategory]
                         },
                         {
                             label: 'My Second dataset',
