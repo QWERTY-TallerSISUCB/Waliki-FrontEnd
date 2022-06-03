@@ -10,7 +10,7 @@ export class DashboardService {
 
   //private baseUrl = 'https://localhost:8443/ms-dashboard/api/dashboard';
 
-  private baseUrl = 'https://localhost:8083/api/dashboard';
+  private baseUrl = 'https://localhost:9030/api/dashboard';
 
   constructor(private httpClient: HttpClient) { }
 
