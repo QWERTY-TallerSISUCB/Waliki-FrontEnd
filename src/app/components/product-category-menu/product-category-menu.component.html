@@ -6,13 +6,13 @@
             <li *ngFor="let tempProductCategory of productCategories">
 
 
-                
+
                 <a routerLink="/category/{{ tempProductCategory.id }}" routerLinkActive="active-link">
                     {{ tempProductCategory.categoryName }}
                 </a>
 
             </li>
-        
+
         </ul>
     </nav>
 </div>
@@ -54,11 +54,7 @@
 <section class="widget widget-popular mb-5">
     <h3 class="widget-title mb-4 h4">Popular Products</h3>
     <a class="popular-products-item media" routerLink="/product-single">
-      <img src="assets/images/p-1.jpg" alt="" class="img-fluid mr-4">
-      <div class="media-body">
-        <h6>Contrast <br>Backpack</h6>
-        <span class="price">$45</span>
-      </div>
+      <app-product-list-most-sell></app-product-list-most-sell>
     </a>
-    
+
   </section>

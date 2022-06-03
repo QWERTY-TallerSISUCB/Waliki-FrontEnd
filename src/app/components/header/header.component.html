@@ -27,7 +27,7 @@
 
             <!-- Account -->
             <li class="nav-item dropdown dropdown-slide">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-delay="350"
+              <a *ngIf="isAuthenticated" class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-delay="350"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Cuenta
               </a>
@@ -38,8 +38,8 @@
                 <li *ngIf="isAuthenticated"><a routerLink="/address">DIreccion de envio</a></li>
 
                 <li *ngIf="!isAuthenticated"><a routerLink="/login">Acceso</a></li>
-                <li *ngIf="!isAuthenticated"><a routerLink="/signup">Registrarse</a></li>
-                <!--<li><a routerLink="/forgot-password">Forgot Password</a></li>-->
+                <!--<li *ngIf="!isAuthenticated"><a routerLink="/signup">Registrarse</a></li>
+                <li><a routerLink="/forgot-password">Forgot Password</a></li>-->
               </ul>
             </li><!-- / Account -->
 
