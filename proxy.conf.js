@@ -1,12 +1,10 @@
 const PROXY_CONFIG = [
   {
     context: [
-      '/foo/**',
-      '/bar/**',
-      '/api/**'
+      '/apisecure/**'
     ],
-    target: "https://localhost:8443",
-    secure: true
+    target: "https://localhost:8080",
+    secure: false
   }
 ]
 
