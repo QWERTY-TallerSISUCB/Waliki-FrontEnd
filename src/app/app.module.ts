@@ -23,6 +23,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ShopComponent } from './components/shop/shop.component';
+
 //import {PaginatorModule} from 'primeng/paginator';
 import {
   OKTA_CONFIG,
@@ -39,6 +40,8 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
 import { ChartModule } from 'primeng/chart';
 import {MenuItem} from 'primeng/api';
+import { ProductListMostSellComponent } from './components/product-list-most-sell/product-list-most-sell.component';
+import { ProductListNewComponent } from './components/product-list-new/product-list-new.component';
 
 //import { SlickCarouselModule } from 'ngx-slick-carousel';
 
@@ -96,6 +99,8 @@ const routes: Routes = [
     ProfileDetailsComponent,
     OrderHistoryComponent,
     AdminDashboardComponent,
+    ProductListMostSellComponent,
+    ProductListNewComponent,
 
   ],
   imports: [
