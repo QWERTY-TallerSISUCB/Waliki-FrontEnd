@@ -10,9 +10,9 @@ import { map } from 'rxjs/operators';
 export class OrderService {
 
 
-  private baseUrl = 'https://localhost:8443/api/products';
+  private baseUrl = 'https://localhost:8080/apisecure/ms-product/api/products';
 
-  private categoryUrl = 'https://localhost:8443/api/product-category';
+  private categoryUrl = 'https://localhost:9010/api/product-category';
 
   constructor(private httpClient: HttpClient) {   }
 

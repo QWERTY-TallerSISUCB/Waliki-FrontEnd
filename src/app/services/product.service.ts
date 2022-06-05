@@ -10,13 +10,13 @@ import { ProductCategory } from '../common/product-category';
 })
 export class ProductService {
 
-  private baseUrl = 'https://localhost:8080/apisecure/ms-product/api/products';
+  private baseUrl = 'http://localhost:8282/ms-product/api/products';
 
-  //private baseUrl = 'https://localhost:9010/api/products';
+  //private baseUrl = 'http://localhost:9010/api/products';
 
-  private categoryUrl = 'https://localhost:8080/apisecure/ms-product/api/product-category';
+  private categoryUrl = 'http://localhost:8282/ms-product/api/product-category';
 
-  //private categoryUrl = 'https://localhost:9010/api/product-category';
+  //private categoryUrl = 'http://localhost:9010/api/product-category';
 
   constructor(private httpClient: HttpClient) { }
 
