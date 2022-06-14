@@ -4,6 +4,7 @@ import { Dashboard } from 'src/app/common/dashboard';
 import { Injectable } from '@angular/core';
 import { DashboardService } from 'src/app/services/dashboard.service';
 import { ActivatedRoute } from '@angular/router';
+import { OktaAuthService } from '@okta/okta-angular';
 
 class AppConfigService {
     config: AppConfig = {
@@ -56,7 +57,10 @@ export class AdminDashboardComponent implements OnInit {
       E:[];
       F:[];
 
-  constructor(private configService: AppConfigService,private route: ActivatedRoute, private dashboardService: DashboardService,) { }
+  constructor(private configService: AppConfigService,
+    private route: ActivatedRoute,
+    private dashboardService: DashboardService,
+    public oktaAuthService: OktaAuthService,) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
@@ -69,7 +73,35 @@ export class AdminDashboardComponent implements OnInit {
       this.dashboardService.getDashboardCategory().subscribe(
         data => {
           this.dashboardclass = data;
-          console.log("data de los dashboard")
+          console.log("data of clothes by category")
+          console.log(this.dashboardclass.data);
+        }
+      )
+      this.dashboardService.getDashboardMostSell().subscribe(
+        data => {
+          this.dashboardclass = data;
+          console.log("data of most sell clothes")
+          console.log(this.dashboardclass.data);
+        }
+      )
+      this.dashboardService.getDashboardOrders().subscribe(
+        data => {
+          this.dashboardclass = data;
+          console.log("data of orders ")
+          console.log(this.dashboardclass.data);
+        }
+      )
+      this.dashboardService.getDashboardOffStock().subscribe(
+        data => {
+          this.dashboardclass = data;
+          console.log("data of clothes with stock")
+          console.log(this.dashboardclass.data);
+        }
+      )
+      this.dashboardService.getDashboardWithStock().subscribe(
+        data => {
+          this.dashboardclass = data;
+          console.log("data of clothes with stock")
           console.log(this.dashboardclass.data);
         }
       )
