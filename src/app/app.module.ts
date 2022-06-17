@@ -42,6 +42,7 @@ import { ChartModule } from 'primeng/chart';
 import {MenuItem} from 'primeng/api';
 import { ProductListMostSellComponent } from './components/product-list-most-sell/product-list-most-sell.component';
 import { ProductListNewComponent } from './components/product-list-new/product-list-new.component';
+import { ProductCategoryComponent } from './components/admin-dashboard/product-category/product-category.component';
 
 //import { SlickCarouselModule } from 'ngx-slick-carousel';
 
@@ -101,6 +102,7 @@ const routes: Routes = [
     AdminDashboardComponent,
     ProductListMostSellComponent,
     ProductListNewComponent,
+    ProductCategoryComponent,
 
   ],
   imports: [

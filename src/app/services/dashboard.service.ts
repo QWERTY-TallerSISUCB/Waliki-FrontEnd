@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Dashboard } from '../common/dashboard';
+import { DataNumber } from 'src/app/common/data-number';
+import { DataStringNumber } from 'src/app/common/data-string-number';
+import { DataStringStringNumber } from 'src/app/common/data-string-string-number';
 import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
@@ -14,51 +16,54 @@ export class DashboardService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getDashboardCategory(): Observable<Dashboard> {
+
+  getDashboardQuantitySellsbyMonthCategory(): Observable<DataStringStringNumber> {
     // need to build URL based on dashboard URL
-    const dashboardUrl = `${this.baseUrl}/prendasporcategoria`;
-    console.log("dashboard category");
-    return this.httpClient.get<Dashboard>(dashboardUrl);
-  }
-  getDashboardMostSell(): Observable<Dashboard> {
-    // need to build URL based on dashboard URL
-    const dashboardUrl = `${this.baseUrl}/prendasmes`;
+    const dashboardUrl = `${this.baseUrl}/productsellsbycategoryandmonth`;
     console.log("dashboard getDashboardMostSell");
-    return this.httpClient.get<Dashboard>(dashboardUrl);
+    return this.httpClient.get<DataStringStringNumber>(dashboardUrl);
   }
-  getDashboardOrders(): Observable<Dashboard> {
+  getDashboardCategory(): Observable<DataStringNumber> {
     // need to build URL based on dashboard URL
-    const dashboardUrl = `${this.baseUrl}/ordenesmes`;
+    const dashboardUrl = `${this.baseUrl}/productbycategory`;
+    console.log("dashboard category");
+    return this.httpClient.get<DataStringNumber>(dashboardUrl);
+  }
+  getDashboardProductSells(): Observable<DataStringNumber> {
+    // need to build URL based on dashboard URL
+    const dashboardUrl = `${this.baseUrl}/productsells`;
     console.log("dashboard getDashboardOrders");
-    return this.httpClient.get<Dashboard>(dashboardUrl);
+    return this.httpClient.get<DataStringNumber>(dashboardUrl);
   }
-  getDashboardOffStock(): Observable<Dashboard> {
+  getDashboardOffStock(): Observable<DataNumber> {
     // need to build URL based on dashboard URL
-    const dashboardUrl = `${this.baseUrl}/prendassinstock`;
+    const dashboardUrl = `${this.baseUrl}/productsinstock`;
     console.log("dashboard getDashboardOffStock");
-    return this.httpClient.get<Dashboard>(dashboardUrl);
+    return this.httpClient.get<DataNumber>(dashboardUrl);
   }
-  getDashboardSell(): Observable<Dashboard> {
+  getDashboardSellsbyMonth(): Observable<DataStringNumber> {
    // need to build URL based on dashboard URL
-    const dashboardUrl = `${this.baseUrl}/montomes`;
+    const dashboardUrl = `${this.baseUrl}/moneysellsbymonth`;
     console.log("dashboard getDashboardSell");
-    return this.httpClient.get<Dashboard>(dashboardUrl);
+    return this.httpClient.get<DataStringNumber>(dashboardUrl);
   }
-  getDashboardWithStock(): Observable<Dashboard> {
+  getDashboardWithStock(): Observable<DataNumber> {
     // need to build URL based on dashboard URL
-    const dashboardUrl = `${this.baseUrl}/prendasconstock`;
+    const dashboardUrl = `${this.baseUrl}/productconstock`;
     console.log("dashboard getDashboardWithStock");
-    return this.httpClient.get<Dashboard>(dashboardUrl);
+    return this.httpClient.get<DataNumber>(dashboardUrl);
   }
 
-  private getDashboards(searchUrl: string): Observable<Dashboard[]> {
-    return this.httpClient.get<GetResponseDashboards>(searchUrl).pipe(map(response => response._embedded.products));
-  }
+
+
+  // private getDashboards(searchUrl: string): Observable<Dashboard[]> {
+  //   return this.httpClient.get<GetResponseDashboards>(searchUrl).pipe(map(response => response._embedded.products));
+  // }
 
 }
 
-interface GetResponseDashboards {
-  _embedded: {
-    products: Dashboard[];
-  }
-}
+// interface GetResponseDashboards {
+//   _embedded: {
+//     d: Dashboard[];
+//   }
+// }
