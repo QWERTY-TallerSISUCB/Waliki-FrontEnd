@@ -53,6 +53,12 @@ export class DashboardService {
     console.log("dashboard getDashboardWithStock");
     return this.httpClient.get<DataNumber>(dashboardUrl);
   }
+  getProducsSellbyMonth(): Observable<DataStringNumber> {
+    // need to build URL based on dashboard URL
+    const dashboardUrl = `${this.baseUrl}/productsellsbymonth`;
+    console.log("dashboard getDashboardWithStock");
+    return this.httpClient.get<DataStringNumber>(dashboardUrl);
+  }
 
 
 

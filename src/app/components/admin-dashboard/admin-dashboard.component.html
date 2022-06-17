@@ -7,14 +7,21 @@
         <h5>Monto de ventas por mes</h5>
         <p-chart type="bar" [data]="stackedData" [options]="stackedOptions"></p-chart>
       </div>
-      <div class="card">
+      <!-- <div class="card">
         <h5>Prendas vendidas por mes</h5>
       <p-chart type="bar" [data]="multidata" [options]="chartOptions"></p-chart>
+      </div> -->
+      <div class="card">
+        <h5>Numero de ventas por mes</h5>
+        <p-chart type="radar" [data]="radardata" [options]="chartOptions" [style]="{'width': '90%'}"></p-chart>
       </div>
+
       <div class="card">
         <h5>Prendas en Stock / Sin stock</h5>
         <p-chart type="pie" [data]="piedata" [options]="chartOptions"  [style]="{'width': '80%'}"></p-chart>
       </div>
+
+      <p-chart type="polarArea" [data]="polardata" [options]="chartOptions" [style]="{'width': '40%'}"></p-chart>
 
 
 

@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 export class OrderService {
 
 
-  private baseUrl = 'https://localhost:8080/apisecure/ms-product/api/products';
+  private baseUrl = 'https://localhost:9010/api/products';
 
   private categoryUrl = 'https://localhost:9010/api/product-category';
 

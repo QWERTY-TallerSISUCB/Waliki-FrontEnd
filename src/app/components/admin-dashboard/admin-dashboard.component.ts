@@ -42,12 +42,15 @@ export class AdminDashboardComponent implements OnInit {
       dashboardnormalclass: DataStringNumber = new DataStringNumber();
       dataVentasTotalespormes: DataStringNumber = new DataStringNumber();
       dashboardmulticlass: DataStringStringNumber = new DataStringStringNumber();
+      dashboardradarclass: DataStringNumber = new DataStringNumber();
 
       //data
       piedata: any;
       multidata: any;
       basicData: any;
       stackedData: any;
+      radardata: any;
+      polardata:any;
       //options
       chartOptions: any;
       basicOptions: any;
@@ -72,108 +75,275 @@ export class AdminDashboardComponent implements OnInit {
       this.handleDashboard2();
       this.handleDashboard3();
       this.handleDashboard4();
+      this.handleDashboard5();
       this.optionscharge();
     });
     }
-    //prendas vendidas por mes
+
+//prendas vendidas por mes
+    handleDashboard5(){
+      this.dashboardService.getProducsSellbyMonth().subscribe(
+        data => {
+          this.dashboardradarclass = data;
+          console.log("data of clothes sell by month and category")
+          console.log(this.dashboardradarclass);
+          let numero;
+          const alphas:string[] = [];
+          const betas:string[] = [];
+          //para la data
+          const charlies:string[] = [];
+          const deltas:string[] = [];
+          const echo:string[] = [];
+          const foxtrot:string[] = [];
+          const golf:string[] = [];
+          //cambiar por un for en
+          let values:any; let valuei:any;
+          let ai;
+          values= Object.keys(this.dashboardradarclass).map(key => this.dashboardradarclass[key]);
+          for(let i=0;i<values.length;i++){
+            valuei = Object.keys(this.dashboardradarclass).map(key => this.dashboardradarclass[i]);
+            for (numero of valuei){
+                console.log(numero[0]);
+                ai= Object.values(numero);
+
+            }
+            alphas.push(ai[0]);
+            betas.push(ai[1]);
+          }
+          console.log("alphas");
+          console.log(alphas);
+          console.log("betas");
+          console.log(betas);
+
+
+          this.radardata = {
+            labels: alphas,
+            datasets: [
+                {
+                    label: 'My Second dataset',
+                    backgroundColor: 'rgba(255,99,132,0.2)',
+                    borderColor: 'rgba(255,99,132,1)',
+                    pointBackgroundColor: 'rgba(255,99,132,1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(255,99,132,1)',
+                    data: betas
+                }
+            ]
+        };
+
+
+        }
+
+
+      );
+
+    }
+
+    //prendas vendidas por mes y categoria
     handleDashboard3(){
       this.dashboardService.getDashboardProductSells().subscribe(
         data => {
           this.dataVentasTotalespormes = data;
           console.log("data of clothes sell by month in quantity")
           console.log(this.dataVentasTotalespormes);
-
         }
       ),
       this.dashboardService.getDashboardQuantitySellsbyMonthCategory().subscribe(
         data => {
           this.dashboardmulticlass = data;
           console.log("data of clothes sell by month and category")
-          const data1 = this.dashboardmulticlass.category;
-          const data2 = this.dashboardmulticlass.category;
           console.log(this.dashboardmulticlass);
-          // console.log(`name: ${this.dashboardmulticlass}`);
-          this.multidata = {
-            labels: data1,
-            datasets: [{
-                type: 'line',
-                label: 'Ventas totales',
-                borderColor: '#42A5F5',
-                borderWidth: 3,
-                fill: false,
-                data: this.dataVentasTotalespormes.quantity
-            },{
-              type: 'bar',
-              label: 'Categoria 1',
-              backgroundColor: '#00b3ff',
-              data: [
-                23,
-                60,
-                24,
-                50,
-              ],
-              borderColor: 'white',
-              borderWidth: 2
-          },{
-            type: 'bar',
-            label: 'Categoria 2',
-            backgroundColor: '#ee00ff',
-            data: [
-                21,
-                54,
-                24,
-                44,
-            ],
-            borderColor: 'white',
-            borderWidth: 2
-        },{
-          type: 'bar',
-          label: 'Categoria 3',
-          backgroundColor: '#a2ff00',
-          data: [
-              24,
-              47,
-              50,
-              10,
-          ],
-          borderColor: 'white',
-          borderWidth: 2
-      },{
-              type: 'bar',
-              label: 'Categoria 4',
-              backgroundColor: '#66BB6A',
-              data: [
-                  25,
-                  66,
-                  35,
-                  39,
-              ],
-              borderColor: 'white',
-              borderWidth: 2
-          }, {
-                type: 'bar',
-                label: 'Categoria 5',
-                backgroundColor: '#ff0000',
-                data: [
-                    22,
-                    84,
-                    44,
-                    26,
-                ],
-                borderColor: 'white',
-                borderWidth: 2
-            }, {
-                type: 'bar',
-                label: 'Categoria 6',
-                backgroundColor: '#FFA726',
-                data: [
-                    23,
-                    52,
-                    46,
-                    45,
-                ]
-            }]
+          let numero;
+          const alphas:string[] = [];
+          const betas:string[] = [];
+          //para la data
+          const charlies:string[] = [];
+          const deltas:string[] = [];
+          const echo:string[] = [];
+          const foxtrot:string[] = [];
+          const golf:string[] = [];
+          //cambiar por un for en
+          let values:any; let valuei:any;
+          let ai;
+          values= Object.keys(this.dashboardmulticlass).map(key => this.dashboardmulticlass[key]);
+          for(let i=0;i<values.length;i++){
+            valuei = Object.keys(this.dashboardmulticlass).map(key => this.dashboardmulticlass[i]);
+            for (numero of valuei){
+                console.log(numero[0]);
+                ai= Object.values(numero);
+
+            }
+            alphas.push(ai[0]);
+            betas.push(ai[1]);
+            charlies.push(ai[2]);
+          }
+          console.log("alphas");
+          console.log(alphas);
+          console.log("betas");
+          console.log(betas);
+          console.log("charlies")
+          console.log(charlies);
+          this.polardata = {
+            labels: betas,
+            datasets: [
+                {
+                    label: 'Ventas',
+                    backgroundColor: 'rgba(179,181,198,0.2)',
+                    borderColor: 'rgba(179,181,198,1)',
+                    pointBackgroundColor: 'rgba(179,181,198,1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(179,181,198,1)',
+                    data: charlies
+                },
+            ]
         };
+
+
+          // for(let i=0;i<values.length;i++){
+          //   if(charlies.length<41){
+          //       this.multidata = {
+          //           labels: [alphas[i],] ,
+          //           datasets: [{
+          //               type: 'line',
+          //               label: betas,
+          //               borderColor: '#42A5F5',
+          //               borderWidth: 3,
+          //               fill: false,
+          //               //arreglar
+          //               data: charlies
+          //           }]
+          //       };
+          //   }
+          // }
+
+    //       this.multidata = {
+    //         labels: [alphas[0],alphas[11],alphas[21],alphas[31]],
+    //         datasets: [{
+    //             type: 'line',
+    //             label: 'Ventas totales',
+    //             borderColor: '#42A5F5',
+    //             borderWidth: 3,
+    //             fill: false,
+    //             //arreglar
+    //             data: this.dataVentasTotalespormes.quantity
+    //         },
+    //         {
+    //           type: 'bar',
+    //           label: betas[0],
+    //           backgroundColor: '#00b3ff',
+    //           data: [charlies[0],charlies[1],charlies[2],charlies[3],charlies[4],charlies[9]
+    //           ],
+    //           borderColor: 'white',
+    //           borderWidth: 2
+    //       },{
+    //         type: 'bar',
+    //         label: betas[1],
+    //         backgroundColor: '#ee00ff',
+    //         data: [
+    //             21,
+    //             54,
+    //             24,
+    //             44,
+    //         ],
+    //         borderColor: 'white',
+    //         borderWidth: 2
+    //     },{
+    //       type: 'bar',
+    //       label: betas[2],
+    //       backgroundColor: '#a2ff00',
+    //       data: [
+    //           24,
+    //           47,
+    //           50,
+    //           10,
+    //       ],
+    //       borderColor: 'white',
+    //       borderWidth: 2
+    //   },{
+    //           type: 'bar',
+    //           label: betas[3],
+    //           backgroundColor: '#66BB6A',
+    //           data: [
+    //               25,
+    //               66,
+    //               35,
+    //               39,
+    //           ],
+    //           borderColor: 'white',
+    //           borderWidth: 2
+    //       }, {
+    //             type: 'bar',
+    //             label: betas[4],
+    //             backgroundColor: '#ff0000',
+    //             data: [
+    //                 22,
+    //                 84,
+    //                 44,
+    //                 26,
+    //             ],
+    //             borderColor: 'white',
+    //             borderWidth: 2
+    //         }, {
+    //             type: 'bar',
+    //             label: betas[5],
+    //             backgroundColor: '#FFA726',
+    //             data: [
+    //                 23,
+    //                 52,
+    //                 46,
+    //                 45,
+    //             ]
+    //         },
+    //         {
+    //             type: 'bar',
+    //             label: betas[6],
+    //             backgroundColor: '#FFA726',
+    //             data: [
+    //                 23,
+    //                 52,
+    //                 46,
+    //                 45,
+    //             ]
+    //         },{
+    //             type: 'bar',
+    //             label: betas[7],
+    //             backgroundColor: '#FFA726',
+    //             data: [
+    //                 23,
+    //                 52,
+    //                 46,
+    //                 45,
+    //             ]
+    //         },{
+    //             type: 'bar',
+    //             label: betas[8],
+    //             backgroundColor: '#FFA726',
+    //             data: [
+    //                 23,
+    //                 52,
+    //                 46,
+    //                 45,
+    //             ]
+    //         },{
+    //             type: 'bar',
+    //             label: betas[9],
+    //             backgroundColor: '#FFA726',
+    //             data: [
+    //                 23,
+    //                 52,
+    //                 46,
+    //                 45,
+    //             ]
+    //         }]
+    //     };
+
+        if(alphas.length>50){
+            this.multidata={
+
+            }
+        }
         }
       )
     }
@@ -318,7 +488,7 @@ export class AdminDashboardComponent implements OnInit {
           console.log("data of clothes by category");
           console.log(this.dashboardtortaclass);
           console.log("categorys");
-          let numero;let numero2;let numero3;let numero4;
+          let numero;
           const alphas:string[] = [];
           const betas:string[] = [];
           //cambiar por un for en
@@ -370,44 +540,37 @@ export class AdminDashboardComponent implements OnInit {
             console.log(this.dashboardtortaclass);
             console.log("money");
             let numero;
-            let values = Object.keys(this.dashboardnormalclass).map(key => this.dashboardnormalclass[key]);
-            // console.log(values);
-            let keys = Object.getOwnPropertyNames(this.dashboardnormalclass).sort();
-            console.log(keys);
+            const alphas:string[] = [];
+            const betas:string[] = [];
+          //cambiar por un for en
+          let values:any; let valuei:any;
+          let ai;
+          values= Object.keys(this.dashboardnormalclass).map(key => this.dashboardnormalclass[key]);
+          for(let i=0;i<values.length;i++){
+            valuei = Object.keys(this.dashboardnormalclass).map(key => this.dashboardnormalclass[i]);
+            for (numero of valuei){
+                console.log(numero[0]);
+                ai= Object.values(numero);
 
-            var meses:string[];
-
-            for (numero of values){
-                let nombre = this.dashboardnormalclass[1].category;
-                let pais = this.dashboardnormalclass.quantity;
-
-                console.log(nombre); // "Sarah"
-                console.log(pais); // "Nigeria"
-
-              console.log(numero);
-
-              let a= Object.values(numero);
-              console.log(a);
-
-
-              const hero = {
-                name: 'Batman',
-                city: 'Gotham'
-              };
-              let b=Object.values(hero); // => ['Batman', 'Gotham']
+            }
+            alphas.push(ai[0]);
+            betas.push(ai[1]);
+          }
+          console.log("alphas");
+          console.log(alphas);
+          console.log("betas");
+          console.log(betas);
 
           this.stackedData = {
-            labels: [pais,pais,a[1]],
+            labels: alphas,
             datasets: [{
                 type: 'bar',
                 label: 'Monto en Bs de las ventas totales por mes',
                 backgroundColor: '#FFA726',
-                data: [
-                  a[1],a[1],a[1]
-                ]
+                data: betas
             }]
         };}
-        }
+
       )
 
 }
