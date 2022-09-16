@@ -20,19 +20,19 @@ export class DashboardService {
   getDashboardQuantitySellsbyMonthCategory(): Observable<DataStringStringNumber> {
     // need to build URL based on dashboard URL
     const dashboardUrl = `${this.baseUrl}/productsellsbycategoryandmonth`;
-    console.log("dashboard getDashboardMostSell");
+    console.log("dashboard getDashboardQuantitySellsbyMonthCategory");
     return this.httpClient.get<DataStringStringNumber>(dashboardUrl);
   }
   getDashboardCategory(): Observable<DataStringNumber> {
     // need to build URL based on dashboard URL
     const dashboardUrl = `${this.baseUrl}/productbycategory`;
-    console.log("dashboard category");
+    console.log("dashboard getDashboardCategory");
     return this.httpClient.get<DataStringNumber>(dashboardUrl);
   }
   getDashboardProductSells(): Observable<DataStringNumber> {
     // need to build URL based on dashboard URL
     const dashboardUrl = `${this.baseUrl}/productsells`;
-    console.log("dashboard getDashboardOrders");
+    console.log("dashboard getDashboardProductSells");
     return this.httpClient.get<DataStringNumber>(dashboardUrl);
   }
   getDashboardOffStock(): Observable<DataNumber> {
@@ -44,7 +44,7 @@ export class DashboardService {
   getDashboardSellsbyMonth(): Observable<DataStringNumber> {
    // need to build URL based on dashboard URL
     const dashboardUrl = `${this.baseUrl}/moneysellsbymonth`;
-    console.log("dashboard getDashboardSell");
+    console.log("dashboard getDashboardSellsbyMonth");
     return this.httpClient.get<DataStringNumber>(dashboardUrl);
   }
   getDashboardWithStock(): Observable<DataNumber> {
@@ -56,11 +56,15 @@ export class DashboardService {
   getProducsSellbyMonth(): Observable<DataStringNumber> {
     // need to build URL based on dashboard URL
     const dashboardUrl = `${this.baseUrl}/productsellsbymonth`;
-    console.log("dashboard getDashboardWithStock");
+    console.log("dashboard getProducsSellbyMonth");
     return this.httpClient.get<DataStringNumber>(dashboardUrl);
   }
-
-
+  getQuantityofOrders(): Observable<DataNumber> {
+    // need to build URL based on dashboard URL
+    const dashboardUrl = `${this.baseUrl}/quantityoforders`;
+    console.log("dashboard getQuantityofOrders");
+    return this.httpClient.get<DataNumber>(dashboardUrl);
+  }
 
   // private getDashboards(searchUrl: string): Observable<Dashboard[]> {
   //   return this.httpClient.get<GetResponseDashboards>(searchUrl).pipe(map(response => response._embedded.products));

@@ -10,13 +10,16 @@ import { ProductCategory } from '../common/product-category';
 })
 export class ProductService {
 
-  //private baseUrl = 'http://localhost:8282/ms-product/api/products';
+  // private baseUrl = 'https://localhost:8443/ms-product/api/products';
+  private baseUrl = 'https://localhost:8443/api/products';
 
-  private baseUrl = 'https://localhost:9010/api/products';
+  //private baseUrl = 'https://localhost:9010/api/products';
 
-  //private categoryUrl = 'http://localhost:8282/ms-product/api/product-category';
+  // private categoryUrl = 'https://localhost:8443/ms-product/api/product-category';
 
-  private categoryUrl = 'https://localhost:9010/api/product-category';
+  private categoryUrl = 'https://localhost:8443/api/product-category';
+
+  //private categoryUrl = 'https://localhost:9010/api/product-category';
 
   constructor(private httpClient: HttpClient) { }
 

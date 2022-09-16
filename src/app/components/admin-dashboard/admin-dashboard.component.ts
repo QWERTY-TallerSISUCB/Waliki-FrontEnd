@@ -43,6 +43,8 @@ export class AdminDashboardComponent implements OnInit {
       dataVentasTotalespormes: DataStringNumber = new DataStringNumber();
       dashboardmulticlass: DataStringStringNumber = new DataStringStringNumber();
       dashboardradarclass: DataStringNumber = new DataStringNumber();
+      //information;
+      info: DataNumber = new DataNumber();
 
       //data
       piedata: any;
@@ -76,8 +78,16 @@ export class AdminDashboardComponent implements OnInit {
       this.handleDashboard3();
       this.handleDashboard4();
       this.handleDashboard5();
+      this.handleInformation();
       this.optionscharge();
     });
+    }
+
+    handleInformation(){
+      this.dashboardService.getQuantityofOrders().subscribe(
+        data => {
+          this.info = data;
+       });
     }
 
 //prendas vendidas por mes
@@ -148,7 +158,7 @@ export class AdminDashboardComponent implements OnInit {
           console.log("data of clothes sell by month in quantity")
           console.log(this.dataVentasTotalespormes);
         }
-      ),
+      );
       this.dashboardService.getDashboardQuantitySellsbyMonthCategory().subscribe(
         data => {
           this.dashboardmulticlass = data;
@@ -355,7 +365,7 @@ export class AdminDashboardComponent implements OnInit {
           console.log("data of clothes without stock")
           console.log(this.datapie2class);
         }
-      ),
+      );
       this.dashboardService.getDashboardWithStock().subscribe(
         data => {
           this.datapieclass = data;
@@ -384,7 +394,6 @@ export class AdminDashboardComponent implements OnInit {
     }
 
     optionscharge(){
-
       this.stackedOptions = {
         plugins: {
             tooltips: {
